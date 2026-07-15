@@ -22,7 +22,7 @@ export async function generateMetadata({
   if (!project) return { title: "Projet introuvable" };
 
   return {
-    title: `${project.title} — FPH Solutions`,
+    title: project.title,
     description: project.description,
   };
 }
@@ -41,10 +41,24 @@ export default async function ProjectDetailPage({
     notFound();
   }
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil", item: "https://fph-solutions.com" },
+      { "@type": "ListItem", position: 2, name: "Projets", item: "https://fph-solutions.com/projets" },
+      { "@type": "ListItem", position: 3, name: project.title },
+    ],
+  }
+
   return (
     <div className="min-h-screen bg-black text-zinc-100">
       {/* Back link */}
       <div className="mx-auto max-w-4xl px-6 pt-10">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
         <Link
           href="/projets"
           className="inline-flex items-center gap-2 text-sm text-zinc-400 transition hover:text-violet-400"

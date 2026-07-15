@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://fph-solutions.com/sitemap.xml
+
+# Block common non-content paths
+Disallow: /_next/
+Disallow: /api/
+
+# Crawl-delay (optional, be polite)
+Crawl-delay: 10

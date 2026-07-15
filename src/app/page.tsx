@@ -3,13 +3,30 @@ import ProjectGrid from "@/components/ProjectGrid"
 import ServicesSection from "@/components/Services"
 import FAQSection from "@/components/FAQ"
 import ContactForm from "@/components/ContactForm"
-import { projects } from "@/data/projects"
+import { projects, faqItems } from "@/data/projects"
 
 const featuredProjects = projects.slice(0, 3)
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+}
 
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Hero />
 
       {/* Projects Section */}

@@ -41,6 +41,22 @@ export const metadata: Metadata = {
     title: "FPH Solutions — Solutions logicielles sur mesure",
     description:
       "Applications web sur mesure avec Next.js, React et TypeScript.",
+    url: "https://fph-solutions.com",
+    images: [
+      {
+        url: "https://fph-solutions.com/og-default.svg",
+        width: 1200,
+        height: 630,
+        alt: "FPH Solutions",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FPH Solutions — Solutions logicielles sur mesure",
+    description:
+      "Applications web sur mesure avec Next.js, React et TypeScript.",
+    images: ["https://fph-solutions.com/og-default.svg"],
   },
   robots: {
     index: true,
@@ -53,9 +69,35 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "FPH Solutions",
+    url: "https://fph-solutions.com",
+    logo: "https://fph-solutions.com/favicon.ico",
+    description:
+      "Solutions logicielles sur mesure — Next.js, React, TypeScript. Applications SAV, sites vitrine, automatisation et IA.",
+    founder: {
+      "@type": "Person",
+      name: "Florian Philibert",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      email: "contact@fph-solutions.com",
+      contactType: "sales",
+      availableLanguage: ["French", "English"],
+    },
+    sameAs: [
+      "https://github.com/FPH-DEV89",
+    ],
+  }
   return (
     <html lang="fr" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body className="min-h-dvh bg-[#0a0a0a] text-zinc-100 antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Header />
         <main className="flex flex-col">{children}</main>
         <Footer />
