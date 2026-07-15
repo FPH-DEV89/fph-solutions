@@ -2,7 +2,7 @@
 
 ## 1. Domaine (Cloudflare)
 
-1. Acheter le domaine `fphsolutions.fr` (ou autre) chez un registrar
+1. Acheter le domaine `fph-solutions.com` chez Cloudflare Registrar
 2. Transférer les nameservers vers Cloudflare (ou utiliser Cloudflare Registrar)
 3. Ajouter les DNS records :
 

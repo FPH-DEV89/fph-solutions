@@ -42,10 +42,10 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm">
               <li>
                 <a
-                  href="mailto:contact@fphsolutions.fr"
+                  href="mailto:contact@fph-solutions.com"
                   className="transition text-zinc-500 hover:text-[#a855f7]"
                 >
-                  contact@fphsolutions.fr
+                  contact@fph-solutions.com
                 </a>
               </li>
               <li>

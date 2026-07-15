@@ -2,7 +2,7 @@
 
 Portfolio et site vitrine de **Florian Philibert** — solutions logicielles sur mesure.
 
-🔗 **Site live** : [fphsolutions.fr](https://fphsolutions.fr)
+**🔗 Site live** : [fph-solutions.com](https://fph-solutions.com)
 
 ---
 
@@ -44,5 +44,5 @@ npm run lint    # ESLint
 
 ## Contact
 
-- Email : [contact@fphsolutions.fr](mailto:contact@fphsolutions.fr)
+- Email : [contact@fph-solutions.com](mailto:contact@fph-solutions.com)
 - GitHub : [FPH-DEV89](https://github.com/FPH-DEV89)

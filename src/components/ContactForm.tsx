@@ -51,8 +51,8 @@ export default function ContactForm() {
             </p>
             <p className="mt-6 text-sm text-zinc-500">
               Vous pouvez aussi m&apos;écrire directement à{" "}
-              <a href="mailto:contact@fphsolutions.fr" className="text-[#a855f7] hover:underline">
-                contact@fphsolutions.fr
+              <a href="mailto:contact@fph-solutions.com" className="text-[#a855f7] hover:underline">
+                contact@fph-solutions.com
               </a>
             </p>
           </motion.div>
