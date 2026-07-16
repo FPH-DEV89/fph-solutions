@@ -48,7 +48,7 @@ export default function Hero() {
       >
         {/* Title */}
         <motion.h1
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white"
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground"
           variants={itemVariants}
         >
           FPH Solutions
@@ -62,7 +62,7 @@ export default function Hero() {
 
         {/* Subtitle */}
         <motion.p
-          className="mt-8 max-w-2xl text-lg sm:text-xl md:text-2xl text-zinc-400 leading-relaxed"
+          className="mt-8 max-w-2xl text-lg sm:text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 leading-relaxed"
           variants={itemVariants}
         >
           Solutions logicielles sur mesure
@@ -81,7 +81,7 @@ export default function Hero() {
           </a>
           <a
             href="#contact"
-            className="inline-flex h-12 items-center justify-center rounded-full border border-zinc-700 px-8 text-sm font-medium text-zinc-300 transition-all hover:border-[#a855f7] hover:text-[#a855f7] hover:shadow-lg hover:shadow-[#a855f7]/10 active:scale-95"
+            className="inline-flex h-12 items-center justify-center rounded-full border border-zinc-300 dark:border-zinc-700 px-8 text-sm font-medium text-zinc-700 dark:text-zinc-300 transition-all hover:border-[#a855f7] hover:text-[#a855f7] hover:shadow-lg hover:shadow-[#a855f7]/10 active:scale-95"
           >
             Me contacter
           </a>
@@ -96,7 +96,7 @@ export default function Hero() {
           {technologies.map((tech) => (
             <span
               key={tech}
-              className="inline-flex items-center rounded-full border border-zinc-800 bg-zinc-900/50 px-4 py-1.5 text-xs font-medium text-zinc-300 backdrop-blur-sm transition-colors hover:border-[#a855f7]/40 hover:text-[#a855f7]"
+              className="inline-flex items-center rounded-full border border-zinc-200 dark:border-zinc-800 bg-zinc-100/50 dark:bg-zinc-900/50 px-4 py-1.5 text-xs font-medium text-zinc-700 dark:text-zinc-300 backdrop-blur-sm transition-colors hover:border-[#a855f7]/40 hover:text-[#a855f7]"
             >
               {tech}
             </span>

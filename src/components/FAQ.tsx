@@ -24,10 +24,10 @@ export default function FAQSection() {
           <p className="mb-3 text-sm font-medium uppercase tracking-widest text-[#a855f7]">
             FAQ
           </p>
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Questions fréquentes
           </h2>
-          <p className="mx-auto mt-4 max-w-lg text-zinc-400">
+          <p className="mx-auto mt-4 max-w-lg text-zinc-600 dark:text-zinc-400">
             Tout ce que vous devez savoir avant de démarrer un projet.
           </p>
         </motion.div>
@@ -38,15 +38,15 @@ export default function FAQSection() {
               key={index}
               className={`rounded-2xl border transition-colors ${
                 openIndex === index
-                  ? "border-[#a855f7]/30 bg-zinc-900/60"
-                  : "border-zinc-800 bg-zinc-900/30"
+                  ? "border-[#a855f7]/30 bg-zinc-100/50 dark:bg-zinc-900/60"
+                  : "border-zinc-200 bg-zinc-50/50 dark:border-zinc-800 dark:bg-zinc-900/30"
               }`}
             >
               <button
                 onClick={() => toggle(index)}
                 className="flex w-full items-center justify-between px-6 py-5 text-left"
               >
-                <span className="pr-4 text-sm font-medium text-white sm:text-base">
+                <span className="pr-4 text-sm font-medium text-foreground sm:text-base">
                   {item.question}
                 </span>
                 <motion.svg
@@ -71,8 +71,8 @@ export default function FAQSection() {
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <div className="border-t border-zinc-800 px-6 py-5">
-                      <p className="text-sm leading-relaxed text-zinc-400">{item.answer}</p>
+                    <div className="border-t border-zinc-200 dark:border-zinc-800 px-6 py-5">
+                      <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{item.answer}</p>
                     </div>
                   </motion.div>
                 )}

@@ -54,7 +54,7 @@ export default function ContactForm() {
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Travaillons ensemble
           </h2>
-          <p className="mx-auto mt-4 max-w-lg text-zinc-400">
+          <p className="mx-auto mt-4 max-w-lg text-zinc-600 dark:text-zinc-400">
             Vous avez un projet en tête ? Envoyez-moi un message et je vous
             réponds sous 24h.
           </p>
@@ -72,7 +72,7 @@ export default function ContactForm() {
               </svg>
             </div>
             <h3 className="text-xl font-semibold text-foreground">Message envoyé !</h3>
-            <p className="mt-2 text-zinc-400">
+            <p className="mt-2 text-zinc-600 dark:text-zinc-400">
               Merci ! Je vous réponds dans les plus brefs délais.
             </p>
             <p className="mt-6 text-sm text-zinc-500">
@@ -96,7 +96,7 @@ export default function ContactForm() {
             )}
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
-                <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-zinc-400">
+                <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-zinc-700 dark:text-zinc-400">
                   Nom
                 </label>
                 <input
@@ -109,7 +109,7 @@ export default function ContactForm() {
                 />
               </div>
               <div>
-                <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-zinc-400">
+                <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-zinc-700 dark:text-zinc-400">
                   Email
                 </label>
                 <input
@@ -123,7 +123,7 @@ export default function ContactForm() {
               </div>
             </div>
             <div>
-              <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-zinc-400">
+              <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-zinc-700 dark:text-zinc-400">
                 Message
               </label>
               <textarea

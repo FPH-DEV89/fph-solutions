@@ -51,10 +51,10 @@ export default function ServicesSection() {
           <p className="mb-3 text-sm font-medium uppercase tracking-widest text-[#a855f7]">
             Services
           </p>
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Ce que je peux faire pour vous
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-zinc-400">
+          <p className="mx-auto mt-4 max-w-xl text-zinc-600 dark:text-zinc-400">
             Du développement web aux solutions d&apos;automatisation, je couvre toute la chaîne
             de création logicielle.
           </p>
@@ -68,13 +68,13 @@ export default function ServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.08 }}
-              className="group rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 transition hover:border-[#a855f7]/30 hover:bg-zinc-900/60"
+              className="group rounded-2xl border border-zinc-200 bg-zinc-50/50 p-6 transition hover:border-[#a855f7]/30 hover:bg-zinc-100/50 dark:border-zinc-800 dark:bg-zinc-900/30 dark:hover:bg-zinc-900/60"
             >
               <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[#a855f7]/10 text-[#a855f7]">
                 {iconMap[service.icon] || iconMap.code}
               </div>
-              <h3 className="mb-2 text-lg font-semibold text-white">{service.title}</h3>
-              <p className="text-sm leading-relaxed text-zinc-400">{service.description}</p>
+              <h3 className="mb-2 text-lg font-semibold text-foreground">{service.title}</h3>
+              <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{service.description}</p>
             </motion.div>
           ))}
         </div>
