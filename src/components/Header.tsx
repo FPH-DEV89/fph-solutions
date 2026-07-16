@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
+import ThemeToggle from "./ThemeToggle";
 
 const NAV_LINKS = [
   { href: "/", label: "Accueil" },
@@ -21,22 +22,22 @@ export default function Header() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className="sticky top-0 z-50 border-b border-white/[0.06]"
+      className="sticky top-0 z-50 border-b border-zinc-200 dark:border-white/[0.06]"
     >
       {/* Glassmorphism backdrop */}
-      <div className="absolute inset-0 bg-[#0a0a0a]/70 backdrop-blur-xl backdrop-saturate-150" />
+      <div className="absolute inset-0 bg-background/70 backdrop-blur-xl backdrop-saturate-150 transition-colors duration-300" />
 
       <nav className="relative mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link
           href="/"
-          className="group flex items-center gap-2 text-lg font-bold tracking-tight text-white transition-colors"
+          className="group flex items-center gap-2 text-lg font-bold tracking-tight text-foreground transition-colors"
         >
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#a855f7] text-sm font-extrabold text-white shadow-[0_0_20px_rgba(168,85,247,0.3)]">
             FP
           </span>
           <span>
-            <span className="text-white">FPH</span>{" "}
+            <span className="text-foreground">FPH</span>{" "}
             <span className="text-[#a855f7]">Solutions</span>
           </span>
         </Link>
@@ -47,13 +48,14 @@ export default function Header() {
             <li key={href}>
               <Link
                 href={href}
-                className="relative rounded-lg px-3 py-2 text-sm font-medium text-white/70 transition-colors hover:text-white hover:bg-white/[0.06]"
+                className="relative rounded-lg px-3 py-2 text-sm font-medium text-foreground/70 transition-colors hover:text-foreground hover:bg-foreground/[0.06]"
               >
                 {label}
               </Link>
             </li>
           ))}
-          <li className="ml-4">
+          <li className="ml-4 flex items-center gap-2">
+            <ThemeToggle />
             <Link
               href="/#contact"
               className="inline-flex items-center rounded-lg bg-[#a855f7] px-4 py-2 text-sm font-medium text-white shadow-[0_0_20px_rgba(168,85,247,0.25)] transition-all hover:bg-[#9333ea] hover:shadow-[0_0_30px_rgba(168,85,247,0.4)]"
@@ -76,45 +78,48 @@ export default function Header() {
           </li>
         </ul>
 
-        {/* Mobile Hamburger */}
-        <button
-          type="button"
-          onClick={() => setMenuOpen((prev) => !prev)}
-          className="relative flex h-10 w-10 items-center justify-center rounded-lg text-white/70 transition-colors hover:text-white hover:bg-white/[0.06] md:hidden"
-          aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
-          aria-expanded={menuOpen}
-        >
-          <motion.div
-            className="absolute flex flex-col gap-1.5"
-            animate={menuOpen ? "open" : "closed"}
-            initial={false}
+        {/* Mobile Hamburger & Theme Toggle */}
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
+          <button
+            type="button"
+            onClick={() => setMenuOpen((prev) => !prev)}
+            className="relative flex h-10 w-10 items-center justify-center rounded-lg text-foreground/70 transition-colors hover:text-foreground hover:bg-foreground/[0.06]"
+            aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-expanded={menuOpen}
           >
-            <motion.span
-              className="block h-[2px] w-5 rounded-full bg-current"
-              variants={{
-                closed: { rotate: 0, y: 0 },
-                open: { rotate: 45, y: 5.5 },
-              }}
-              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            />
-            <motion.span
-              className="block h-[2px] w-5 rounded-full bg-current"
-              variants={{
-                closed: { opacity: 1 },
-                open: { opacity: 0 },
-              }}
-              transition={{ duration: 0.15 }}
-            />
-            <motion.span
-              className="block h-[2px] w-5 rounded-full bg-current"
-              variants={{
-                closed: { rotate: 0, y: 0 },
-                open: { rotate: -45, y: -5.5 },
-              }}
-              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            />
-          </motion.div>
-        </button>
+            <motion.div
+              className="absolute flex flex-col gap-1.5"
+              animate={menuOpen ? "open" : "closed"}
+              initial={false}
+            >
+              <motion.span
+                className="block h-[2px] w-5 rounded-full bg-current"
+                variants={{
+                  closed: { rotate: 0, y: 0 },
+                  open: { rotate: 45, y: 5.5 },
+                }}
+                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              />
+              <motion.span
+                className="block h-[2px] w-5 rounded-full bg-current"
+                variants={{
+                  closed: { opacity: 1 },
+                  open: { opacity: 0 },
+                }}
+                transition={{ duration: 0.15 }}
+              />
+              <motion.span
+                className="block h-[2px] w-5 rounded-full bg-current"
+                variants={{
+                  closed: { rotate: 0, y: 0 },
+                  open: { rotate: -45, y: -5.5 },
+                }}
+                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              />
+            </motion.div>
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Menu */}
@@ -125,7 +130,7 @@ export default function Header() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="relative overflow-hidden border-t border-white/[0.06] bg-[#0a0a0a]/90 backdrop-blur-xl md:hidden"
+            className="relative overflow-hidden border-t border-zinc-200 dark:border-white/[0.06] bg-background/90 backdrop-blur-xl md:hidden"
           >
             <div className="flex flex-col gap-1 px-6 py-4">
               {NAV_LINKS.map(({ href, label }, i) => (
@@ -146,7 +151,7 @@ export default function Header() {
                       "flex items-center rounded-lg px-4 py-3 text-sm font-medium transition-colors",
                       href === "/#contact"
                         ? "bg-[#a855f7] text-white shadow-[0_0_20px_rgba(168,85,247,0.25)]"
-                        : "text-white/70 hover:text-white hover:bg-white/[0.06]"
+                        : "text-foreground/70 hover:text-foreground hover:bg-foreground/[0.06]"
                     )}
                   >
                     {label}

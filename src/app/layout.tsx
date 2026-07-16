@@ -93,7 +93,22 @@ export default function RootLayout({
   }
   return (
     <html lang="fr" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className="min-h-dvh bg-[#0a0a0a] text-zinc-100 antialiased">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                if (localStorage.theme === 'light') {
+                  document.documentElement.classList.remove('dark')
+                } else {
+                  document.documentElement.classList.add('dark')
+                }
+              } catch (_) {}
+            `,
+          }}
+        />
+      </head>
+      <body className="min-h-dvh bg-background text-foreground antialiased transition-colors duration-300">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

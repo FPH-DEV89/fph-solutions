@@ -39,7 +39,7 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="bg-[#0a0a0a] py-24 sm:py-32">
+    <section id="services" className="bg-background py-24 sm:py-32 transition-colors duration-300">
       <div className="mx-auto max-w-6xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

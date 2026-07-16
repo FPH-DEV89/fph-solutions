@@ -30,7 +30,7 @@ export default function HomePage() {
       <Hero />
 
       {/* Projects Section */}
-      <section id="projects" className="bg-[#0a0a0a] py-24 sm:py-32">
+      <section id="projects" className="bg-background py-24 sm:py-32 transition-colors duration-300">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-14 text-center">
             <p className="mb-3 text-sm font-medium uppercase tracking-widest text-[#a855f7]">

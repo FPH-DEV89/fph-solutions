@@ -29,7 +29,7 @@ const itemVariants = {
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-[#0a0a0a] px-6 py-20">
+    <section className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-background px-6 py-20 transition-colors duration-300">
       {/* Subtle radial gradient overlay */}
       <div
         aria-hidden="true"
