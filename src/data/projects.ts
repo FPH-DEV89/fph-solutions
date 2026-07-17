@@ -20,7 +20,7 @@ export const projects: Project[] = [
     slug: "trackrma",
     title: "Trackrma",
     subtitle: "Application SAV intelligente",
-    description: "Pilotage et optimisation des retours matériels pour STEF Group — suivi RMA, réparations, réexpéditions.",
+    description: "Pilotage et optimisation des retours matériels — suivi RMA, réparations, réexpéditions.",
     longDescription: "Trackrma est une application complète de gestion des retours SAV (RMA) destinée aux équipes logistiques et maintenance. Elle permet de suivre chaque article du retour jusqu'à la réexpédition, avec dashboards temps réel, métriques détaillées, et automatisation des workflows de réparation. Développée pour STEF Group, elle optimise le taux de retour en stock et réduit les délais de traitement.",
     tags: ["Next.js", "React", "TypeScript", "Tailwind", "Remotion"],
     image: "/images/trackrma.webp",

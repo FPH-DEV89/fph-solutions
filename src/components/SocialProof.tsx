@@ -13,10 +13,10 @@ export default function SocialProofSection() {
               Ils me font confiance
             </h3>
             <div className="flex flex-wrap gap-6 items-center">
-              {/* STEF Group representation */}
+              {/* Logistique & Transport  representation */}
               <div className="flex items-center gap-2 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 px-5 py-3 shadow-sm select-none">
-                <span className="text-xl font-extrabold tracking-widest text-[#a855f7]">STEF</span>
-                <span className="text-xs font-semibold text-zinc-500 uppercase">Group</span>
+                <span className="text-xl font-extrabold tracking-widest text-[#a855f7]">Logistique & Transport</span>
+                <span className="text-xs font-semibold text-zinc-500 uppercase"></span>
               </div>
             </div>
           </div>
@@ -41,7 +41,7 @@ export default function SocialProofSection() {
                   Responsable d&apos;Exploitation SAV
                 </p>
                 <p className="text-xs text-zinc-500 dark:text-zinc-400">
-                  STEF Group Logistics
+                  Entreprise leader en logistique
                 </p>
               </div>
             </motion.div>
