@@ -75,6 +75,21 @@ export default function ContactForm() {
             <p className="mt-2 text-zinc-600 dark:text-zinc-400">
               Merci ! Je vous réponds dans les plus brefs délais.
             </p>
+            
+            <div className="my-6 border-t border-zinc-100 dark:border-zinc-800 pt-6">
+              <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-3">
+                Vous préférez planifier un échange directement ?
+              </p>
+              <a
+                href="https://cal.com/fph-solutions.com/15min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-11 items-center justify-center rounded-full bg-[#a855f7] px-6 text-sm font-medium text-white transition-all hover:bg-[#9333ea] hover:shadow-md active:scale-95"
+              >
+                Réserver un appel découverte (15 min)
+              </a>
+            </div>
+
             <p className="mt-6 text-sm text-zinc-500">
               Vous pouvez aussi m&apos;écrire directement à{" "}
               <a href="mailto:contact@fph-solutions.com" className="text-[#a855f7] hover:underline">
@@ -143,6 +158,15 @@ export default function ContactForm() {
               >
                 {loading ? "Envoi en cours..." : "Envoyer le message"}
               </button>
+              <span className="text-xs text-zinc-500">ou</span>
+              <a
+                href="https://cal.com/fph-solutions.com/15min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-semibold text-[#a855f7] hover:underline transition"
+              >
+                Planifier un appel directement (15 min)
+              </a>
             </div>
           </form>
         )}
