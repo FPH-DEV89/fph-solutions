@@ -30,7 +30,7 @@ export async function POST(request: Request) {
 
     const resend = new Resend(apiKey);
     const { error } = await resend.emails.send({
-      from: "FPH Solutions <onboarding@resend.dev>",
+      from: "FPH Solutions <contact@fph-solutions.com>",
       to: "contact@fph-solutions.com",
       replyTo: email,
       subject: `Nouveau message de ${name} via FPH Solutions`,
