@@ -36,7 +36,7 @@ export default function AboutSection() {
             <div className="relative h-80 w-80 overflow-hidden rounded-3xl border border-zinc-200 bg-white p-3 shadow-xl dark:border-zinc-800 dark:bg-zinc-900">
               <div className="relative h-full w-full overflow-hidden rounded-2xl">
                 <Image
-                  src="/images/florian-philibert.png"
+                  src="/images/florian-philibert.webp"
                   alt="Florian Philibert - Développeur Full-Stack"
                   fill
                   className="object-cover"

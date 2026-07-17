@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { projects } from "@/data/projects";
 
 export const metadata: Metadata = {
-  title: "Projets — FPH Solutions",
+  title: "Projets",
   description:
     "Découvrez mes projets : applications SAV, sites vitrine, outils de productivité et solutions d'automatisation.",
 };

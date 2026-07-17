@@ -35,6 +35,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Florian Philibert" }],
   creator: "FPH Solutions",
+  alternates: {
+    canonical: "https://fph-solutions.com",
+  },
   openGraph: {
     type: "website",
     locale: "fr_FR",

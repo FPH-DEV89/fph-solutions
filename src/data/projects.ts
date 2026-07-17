@@ -23,7 +23,7 @@ export const projects: Project[] = [
     description: "Pilotage et optimisation des retours matériels pour STEF Group — suivi RMA, réparations, réexpéditions.",
     longDescription: "Trackrma est une application complète de gestion des retours SAV (RMA) destinée aux équipes logistiques et maintenance. Elle permet de suivre chaque article du retour jusqu'à la réexpédition, avec dashboards temps réel, métriques détaillées, et automatisation des workflows de réparation. Développée pour STEF Group, elle optimise le taux de retour en stock et réduit les délais de traitement.",
     tags: ["Next.js", "React", "TypeScript", "Tailwind", "Remotion"],
-    image: "/images/trackrma.png",
+    image: "/images/trackrma.webp",
     links: {
       github: "https://github.com/FPH-DEV89",
       demo: "https://trackrma.vercel.app",
@@ -44,7 +44,7 @@ export const projects: Project[] = [
     description: "Application professionnelle de suivi des Équipements de Protection Individuelle — inventaire, traçabilité, alertes.",
     longDescription: "Solution complète de gestion des EPI pour les entreprises. Suivi des stocks, traçabilité des équipements, alertes de maintenance et d'expiration, génération de rapports de conformité. Conçue pour les environnements professionnels exigeant une rigueur documentaire et une traçabilité sans faille.",
     tags: ["TypeScript", "Next.js", "PostgreSQL", "Prisma", "shadcn/ui"],
-    image: "/images/gestion-epi.png",
+    image: "/images/gestion-epi.webp",
     links: {
       github: "https://github.com/FPH-DEV89/Gestion-EPI",
     },
@@ -64,7 +64,7 @@ export const projects: Project[] = [
     description: "Site web professionnel pour une entreprise de plomberie avec présentation des services, devis en ligne et zone d'intervention.",
     longDescription: "Site vitrine complet pour SOBE Plomberie, une entreprise intervenant sur Aulnay-sous-Bois et sa région. Le site présente les services (dépannage, installation, rénovation), les zones d'intervention, et permet aux clients de demander un devis en ligne. Design moderne et responsive, optimisé SEO.",
     tags: ["JAMstack", "JavaScript", "Tailwind CSS", "SEO"],
-    image: "/images/sobe-plomberie.png",
+    image: "/images/sobe-plomberie.webp",
     links: {
       github: "https://github.com/FPH-DEV89/sobe-plomberie",
     },
@@ -84,6 +84,7 @@ export const projects: Project[] = [
     description: "Application TypeScript nouvelle génération — solution moderne et performante.",
     longDescription: "Freshr est une application construite avec TypeScript, exploitant les dernières avancées du langage pour offrir une expérience rapide, typée et maintenable. Architecture modulaire et scalable, conçue pour évoluer avec les besoins.",
     tags: ["TypeScript", "React", "Moderne"],
+    image: "/images/freshr.webp",
     links: {
       github: "https://github.com/FPH-DEV89/freshr",
     },
@@ -102,6 +103,7 @@ export const projects: Project[] = [
     description: "Application favorisant la concentration et la gestion du temps — flow state, pauses, rythme de travail optimal.",
     longDescription: "ZenFlow aide les professionnels à maintenir un état de flow optimal. Gestion de sessions de concentration, pauses intelligentes, statistiques de productivité, et personnalisation des cycles travail/repos. Une approche moderne du bien-être au travail.",
     tags: ["TypeScript", "UX", "Productivité"],
+    image: "/images/zenflow.webp",
     links: {
       github: "https://github.com/FPH-DEV89/ZenFlow",
     },
@@ -121,6 +123,7 @@ export const projects: Project[] = [
     description: "Application de planification de mariage — liste d'invités, budget, chronologie et organisation complète.",
     longDescription: "Version 2 d'un planificateur de mariage complet. Gestion des invités avec statuts et réponses, suivi budgétaire détaillé, chronologie des événements, checklist des tâches, et tableau de bord récapitulatif. Conçue pour simplifier l'organisation du plus beau jour.",
     tags: ["TypeScript", "Full-stack", "Gestion de projet"],
+    image: "/images/wedding-planner.webp",
     links: {
       github: "https://github.com/FPH-DEV89/wedding-planner-v2",
     },
