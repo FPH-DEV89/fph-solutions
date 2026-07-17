@@ -28,6 +28,7 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm text-zinc-600 dark:text-zinc-500">
               <li><Link href="/" className="transition hover:text-[#a855f7]">Accueil</Link></li>
               <li><Link href="/projets" className="transition hover:text-[#a855f7]">Projets</Link></li>
+              <li><Link href="/#about" className="transition hover:text-[#a855f7]">À propos</Link></li>
               <li><Link href="/#services" className="transition hover:text-[#a855f7]">Services</Link></li>
               <li><Link href="/#faq" className="transition hover:text-[#a855f7]">FAQ</Link></li>
               <li><Link href="/#contact" className="transition hover:text-[#a855f7]">Contact</Link></li>
@@ -61,13 +62,31 @@ export default function Footer() {
                   GitHub
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://linkedin.com/in/florian-philibert"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-zinc-600 dark:text-zinc-500 transition hover:text-[#a855f7]"
+                >
+                  <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                  </svg>
+                  LinkedIn
+                </a>
+              </li>
             </ul>
           </div>
         </div>
 
         <div className="mt-12 border-t border-zinc-200 dark:border-zinc-800/50 pt-8 text-center text-xs text-zinc-500 dark:text-zinc-600">
           <p>© {currentYear} FPH Solutions. Tous droits réservés.</p>
-          <p className="mt-1">Propulsé par Next.js • Hébergé sur Vercel</p>
+          <p className="mt-1.5 space-x-3">
+            <Link href="/mentions-legales" className="hover:text-[#a855f7] hover:underline transition">Mentions légales</Link>
+            <span>•</span>
+            <Link href="/politique-de-confidentialite" className="hover:text-[#a855f7] hover:underline transition">Politique de confidentialité</Link>
+          </p>
+          <p className="mt-2">Propulsé par Next.js • Hébergé sur Vercel</p>
         </div>
       </div>
     </footer>

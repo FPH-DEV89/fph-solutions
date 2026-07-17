@@ -85,7 +85,7 @@ export default function ContactForm() {
         ) : (
           <form
             onSubmit={handleSubmit}
-            action="https://formspree.io/f/contact"
+            action="/api/contact"
             method="POST"
             className="space-y-5"
           >

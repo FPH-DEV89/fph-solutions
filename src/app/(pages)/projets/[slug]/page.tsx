@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { projects } from "@/data/projects";
@@ -99,6 +100,21 @@ export default async function ProjectDetailPage({
           </span>
         </div>
       </section>
+
+      {/* Image de projet */}
+      {project.image && (
+        <section className="mx-auto max-w-4xl px-6 pb-12">
+          <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900 shadow-xl">
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+        </section>
+      )}
 
       {/* Description longue */}
       <section className="mx-auto max-w-4xl px-6 pb-16">

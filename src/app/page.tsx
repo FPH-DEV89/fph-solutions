@@ -3,6 +3,8 @@ import ProjectGrid from "@/components/ProjectGrid"
 import ServicesSection from "@/components/Services"
 import FAQSection from "@/components/FAQ"
 import ContactForm from "@/components/ContactForm"
+import AboutSection from "@/components/About"
+import SocialProofSection from "@/components/SocialProof"
 import { projects, faqItems } from "@/data/projects"
 
 const featuredProjects = projects.slice(0, 3)
@@ -48,6 +50,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <SocialProofSection />
+      <AboutSection />
       <ServicesSection />
       <FAQSection />
       <ContactForm />

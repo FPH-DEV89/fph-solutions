@@ -2,10 +2,11 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import type { Project } from '../data/projects'
 
 export default function ProjectCard({ project }: { project: Project }) {
-  const { slug, title, subtitle, description, tags, links } = project
+  const { slug, title, subtitle, description, tags, links, image } = project
 
   return (
     <motion.article
@@ -16,29 +17,39 @@ export default function ProjectCard({ project }: { project: Project }) {
       transition={{ duration: 0.3, ease: 'easeOut' }}
       className="group relative flex flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white transition-colors dark:border-zinc-800 dark:bg-zinc-900"
     >
-      {/* Image placeholder */}
+      {/* Image container */}
       <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-zinc-100 to-zinc-200 dark:from-zinc-800 dark:to-zinc-700">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <svg
-            className="h-12 w-12 text-zinc-300 dark:text-zinc-600"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={1}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z"
-            />
-          </svg>
-        </div>
+        {image ? (
+          <Image
+            src={image}
+            alt={title}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <svg
+              className="h-12 w-12 text-zinc-300 dark:text-zinc-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={1}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z"
+              />
+            </svg>
+          </div>
+        )}
         {/* Hover overlay */}
-        <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100">
+        <Link href={`/projets/${slug}`} className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100">
           <span className="rounded-full bg-white/90 px-4 py-1.5 text-sm font-medium text-zinc-900 dark:bg-zinc-900/90 dark:text-zinc-100">
             Voir le projet
           </span>
-        </div>
+        </Link>
       </div>
 
       {/* Content */}

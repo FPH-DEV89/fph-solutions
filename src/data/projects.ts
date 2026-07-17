@@ -23,6 +23,7 @@ export const projects: Project[] = [
     description: "Pilotage et optimisation des retours matériels pour STEF Group — suivi RMA, réparations, réexpéditions.",
     longDescription: "Trackrma est une application complète de gestion des retours SAV (RMA) destinée aux équipes logistiques et maintenance. Elle permet de suivre chaque article du retour jusqu'à la réexpédition, avec dashboards temps réel, métriques détaillées, et automatisation des workflows de réparation. Développée pour STEF Group, elle optimise le taux de retour en stock et réduit les délais de traitement.",
     tags: ["Next.js", "React", "TypeScript", "Tailwind", "Remotion"],
+    image: "/images/trackrma.png",
     links: {
       github: "https://github.com/FPH-DEV89",
       demo: "https://trackrma.vercel.app",
@@ -42,7 +43,8 @@ export const projects: Project[] = [
     subtitle: "Gestion d'équipements professionnels",
     description: "Application professionnelle de suivi des Équipements de Protection Individuelle — inventaire, traçabilité, alertes.",
     longDescription: "Solution complète de gestion des EPI pour les entreprises. Suivi des stocks, traçabilité des équipements, alertes de maintenance et d'expiration, génération de rapports de conformité. Conçue pour les environnements professionnels exigeant une rigueur documentaire et une traçabilité sans faille.",
-    tags: ["TypeScript", "Next.js", "Base de données", "UI professionnelle"],
+    tags: ["TypeScript", "Next.js", "PostgreSQL", "Prisma", "shadcn/ui"],
+    image: "/images/gestion-epi.png",
     links: {
       github: "https://github.com/FPH-DEV89/Gestion-EPI",
     },
@@ -61,7 +63,8 @@ export const projects: Project[] = [
     subtitle: "Site vitrine pro",
     description: "Site web professionnel pour une entreprise de plomberie avec présentation des services, devis en ligne et zone d'intervention.",
     longDescription: "Site vitrine complet pour SOBE Plomberie, une entreprise intervenant sur Aulnay-sous-Bois et sa région. Le site présente les services (dépannage, installation, rénovation), les zones d'intervention, et permet aux clients de demander un devis en ligne. Design moderne et responsive, optimisé SEO.",
-    tags: ["HTML/CSS", "JavaScript", "SEO", "Responsive"],
+    tags: ["JAMstack", "JavaScript", "Tailwind CSS", "SEO"],
+    image: "/images/sobe-plomberie.png",
     links: {
       github: "https://github.com/FPH-DEV89/sobe-plomberie",
     },
