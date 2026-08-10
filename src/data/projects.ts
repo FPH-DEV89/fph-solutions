@@ -6,6 +6,7 @@ export interface Project {
   longDescription: string
   tags: string[]
   image?: string
+  imageFull?: string
   links: {
     github?: string
     demo?: string
@@ -21,9 +22,10 @@ export const projects: Project[] = [
     title: "Trackrma",
     subtitle: "Application SAV intelligente",
     description: "Pilotage et optimisation des retours matériels — suivi RMA, réparations, réexpéditions.",
-    longDescription: "Trackrma est une application complète de gestion des retours SAV (RMA) destinée aux équipes logistiques et maintenance. Elle permet de suivre chaque article du retour jusqu'à la réexpédition, avec dashboards temps réel, métriques détaillées, et automatisation des workflows de réparation. Développée pour STEF Group, elle optimise le taux de retour en stock et réduit les délais de traitement.",
+    longDescription: "Trackrma est une application complète de gestion des retours SAV (RMA) destinée aux équipes logistiques et maintenance. Elle permet de suivre chaque article du retour jusqu'à la réexpédition, avec dashboards temps réel, métriques détaillées, et automatisation des workflows de réparation. Développée pour un grand groupe de logistique frigorifique, elle optimise le taux de retour en stock et réduit les délais de traitement.",
     tags: ["Next.js", "React", "TypeScript", "Tailwind", "Remotion"],
-    image: "/images/trackrma.webp",
+    image: "/projects/trackrma.webp",
+    imageFull: "/projects/trackrma-full.webp",
     links: {
       github: "https://github.com/FPH-DEV89",
       demo: "https://trackrma.vercel.app",
@@ -44,9 +46,11 @@ export const projects: Project[] = [
     description: "Application professionnelle de suivi des Équipements de Protection Individuelle — inventaire, traçabilité, alertes.",
     longDescription: "Solution complète de gestion des EPI pour les entreprises. Suivi des stocks, traçabilité des équipements, alertes de maintenance et d'expiration, génération de rapports de conformité. Conçue pour les environnements professionnels exigeant une rigueur documentaire et une traçabilité sans faille.",
     tags: ["TypeScript", "Next.js", "PostgreSQL", "Prisma", "shadcn/ui"],
-    image: "/images/gestion-epi.webp",
+    image: "/projects/gestion-epi.webp",
+    imageFull: "/projects/gestion-epi-full.webp",
     links: {
       github: "https://github.com/FPH-DEV89/Gestion-EPI",
+      demo: "https://epi-manager-lovat.vercel.app",
     },
     highlights: [
       "Inventaire et suivi des équipements",
@@ -62,11 +66,13 @@ export const projects: Project[] = [
     title: "SOBE Plomberie",
     subtitle: "Site vitrine pro",
     description: "Site web professionnel pour une entreprise de plomberie avec présentation des services, devis en ligne et zone d'intervention.",
-    longDescription: "Site vitrine complet pour SOBE Plomberie, une entreprise intervenant sur Aulnay-sous-Bois et sa région. Le site présente les services (dépannage, installation, rénovation), les zones d'intervention, et permet aux clients de demander un devis en ligne. Design moderne et responsive, optimisé SEO.",
+    longDescription: "Site vitrine complet pour SOBE Plomberie, une entreprise artisanale avec présentation des services (dépannage, installation, rénovation, climatisation), les zones d'intervention, et une demande de devis en ligne. Design moderne et responsive, optimisé SEO.",
     tags: ["JAMstack", "JavaScript", "Tailwind CSS", "SEO"],
-    image: "/images/sobe-plomberie.webp",
+    image: "/projects/sobe-plomberie.webp",
+    imageFull: "/projects/sobe-plomberie-full.webp",
     links: {
       github: "https://github.com/FPH-DEV89/sobe-plomberie",
+      demo: "https://sobe-plomberie.vercel.app",
     },
     highlights: [
       "Présentation claire des services de plomberie",
@@ -103,9 +109,11 @@ export const projects: Project[] = [
     description: "Application favorisant la concentration et la gestion du temps — flow state, pauses, rythme de travail optimal.",
     longDescription: "ZenFlow aide les professionnels à maintenir un état de flow optimal. Gestion de sessions de concentration, pauses intelligentes, statistiques de productivité, et personnalisation des cycles travail/repos. Une approche moderne du bien-être au travail.",
     tags: ["TypeScript", "UX", "Productivité"],
-    image: "/images/zenflow.webp",
+    image: "/projects/zenflow.webp",
+    imageFull: "/projects/zenflow-full.webp",
     links: {
       github: "https://github.com/FPH-DEV89/ZenFlow",
+      demo: "https://zen-flow-iota.vercel.app",
     },
     highlights: [
       "Sessions de concentration chronométrées",
@@ -123,9 +131,11 @@ export const projects: Project[] = [
     description: "Application de planification de mariage — liste d'invités, budget, chronologie et organisation complète.",
     longDescription: "Version 2 d'un planificateur de mariage complet. Gestion des invités avec statuts et réponses, suivi budgétaire détaillé, chronologie des événements, checklist des tâches, et tableau de bord récapitulatif. Conçue pour simplifier l'organisation du plus beau jour.",
     tags: ["TypeScript", "Full-stack", "Gestion de projet"],
-    image: "/images/wedding-planner.webp",
+    image: "/projects/wedding-planner.webp",
+    imageFull: "/projects/wedding-planner-full.webp",
     links: {
       github: "https://github.com/FPH-DEV89/wedding-planner-v2",
+      demo: "https://wedding-planner-v2-livid.vercel.app",
     },
     highlights: [
       "Gestion des invités et réponses",
@@ -135,6 +145,28 @@ export const projects: Project[] = [
     ],
     year: "2025",
     category: "app",
+  },
+  {
+    slug: "maxpatrie",
+    title: "Maxpatrie",
+    subtitle: "Blog expatriation — famille à Valencia",
+    description: "Blog d'expatriation d'une famille française qui s'installe à Valencia : quartiers, budget, scolarité, démarches — avec de vrais chiffres.",
+    longDescription: "Maxpatrie est le blog d'expatriation d'une famille française en route pour Valencia (Espagne) en 2028. Au-delà du simple récit de voyage : guides détaillés des quartiers, budget de vie réel chiffré poste par poste, système scolaire espagnol décrypté, démarches administratives expliquées simplement. Un ton direct et personnel, pensé pour servir à d'autres familles qui envisagent l'expatriation.",
+    tags: ["HTML/CSS", "Blog", "SEO", "Responsive"],
+    image: "/projects/maxpatrie.webp",
+    imageFull: "/projects/maxpatrie-full.webp",
+    links: {
+      github: "https://github.com/FPH-DEV89/maxpatrie-site",
+      demo: "https://fph-dev89.github.io/maxpatrie-site/",
+    },
+    highlights: [
+      "Guides quartiers détaillés avec vrais prix",
+      "Budget mensuel chiffré (3 scénarios)",
+      "Timeline d'expatriation sur 2 ans",
+      "Contenu orienté SEO",
+    ],
+    year: "2026",
+    category: "site",
   },
 ]
 

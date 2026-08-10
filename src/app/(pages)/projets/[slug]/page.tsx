@@ -101,15 +101,20 @@ export default async function ProjectDetailPage({
         </div>
       </section>
 
-      {/* Image de projet */}
+      {/* Image de projet — capture pleine page quand dispo */}
       {project.image && (
         <section className="mx-auto max-w-4xl px-6 pb-12">
-          <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900 shadow-xl">
+          <div
+            className={`overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900 shadow-xl ${
+              project.imageFull ? "" : "relative aspect-video"
+            }`}
+          >
             <Image
-              src={project.image}
+              src={project.imageFull ?? project.image}
               alt={project.title}
-              fill
-              className="object-cover"
+              {...(project.imageFull
+                ? { width: 1100, height: 720, className: "h-auto w-full" }
+                : { fill: true, className: "object-cover" })}
               priority
             />
           </div>
