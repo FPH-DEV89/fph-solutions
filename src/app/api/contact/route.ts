@@ -15,6 +15,15 @@ export async function POST(request: Request) {
       );
     }
 
+    const consent = formData.get("consent");
+
+    if (consent !== "true") {
+      return NextResponse.json(
+        { errors: [{ message: "Le consentement au traitement des données personnelles est requis." }] },
+        { status: 400 }
+      );
+    }
+
     const apiKey = process.env.RESEND_API_KEY;
 
     if (!apiKey) {

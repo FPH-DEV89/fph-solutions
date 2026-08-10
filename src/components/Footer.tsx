@@ -85,6 +85,10 @@ export default function Footer() {
             <Link href="/mentions-legales" className="hover:text-[#a855f7] hover:underline transition">Mentions légales</Link>
             <span>•</span>
             <Link href="/politique-de-confidentialite" className="hover:text-[#a855f7] hover:underline transition">Politique de confidentialité</Link>
+            <span>•</span>
+            <Link href="/politique-de-cookies" className="hover:text-[#a855f7] hover:underline transition">Politique de cookies</Link>
+            <span>•</span>
+            <Link href="/cgu" className="hover:text-[#a855f7] hover:underline transition">CGU</Link>
           </p>
           <p className="mt-2">Propulsé par Next.js • Hébergé sur Vercel</p>
         </div>

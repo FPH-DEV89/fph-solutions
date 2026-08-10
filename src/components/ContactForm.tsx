@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 import { motion } from "framer-motion"
 
 export default function ContactForm() {
@@ -149,6 +150,23 @@ export default function ContactForm() {
                 className="w-full rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/50 dark:bg-zinc-900/50 px-4 py-3 text-sm text-foreground placeholder-zinc-500 outline-none transition focus:border-[#a855f7] focus:ring-1 focus:ring-[#a855f7]/30 resize-none"
                 placeholder="Parlez-moi de votre projet..."
               />
+            </div>
+            <div className="flex items-start gap-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/50 dark:bg-zinc-900/50 px-4 py-3">
+              <input
+                type="checkbox"
+                id="consent"
+                name="consent"
+                value="true"
+                required
+                className="mt-0.5 h-4 w-4 shrink-0 accent-[#a855f7]"
+              />
+              <label htmlFor="consent" className="text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">
+                J&apos;accepte que mes données (nom, email, message) soient traitées par FPH Solutions pour répondre à ma demande, conformément à la{" "}
+                <Link href="/politique-de-confidentialite" className="text-[#a855f7] hover:underline">
+                  politique de confidentialité
+                </Link>
+                . Je peux retirer mon consentement à tout moment.
+              </label>
             </div>
             <div className="flex flex-col items-center gap-3 pt-2">
               <button
