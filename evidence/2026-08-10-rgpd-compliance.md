@@ -46,3 +46,8 @@ Respecter les normes françaises et européennes : RGPD (règlement UE 2016/679)
 ## Bugs outils rencontrés (corrigés)
 - `qa-agent.py` : `max_tokens=4000` → deepseek-v4-pro (modèle reasoning) renvoyait `content` vide (budget consommé par reasoning_content). Fix : 16000 + fallback reasoning_content. Voir skill agy-code-delegation.
 - `agy-pipeline.py` : crash « File name too long » dans build_spec2 quand le QA renvoie du non-JSON (le chemin de spec2 est construit depuis le contenu). Workaround : QA manuel via qa-agent.py.
+
+## Suivi CI (même jour, post-push)
+- Push 188d641 → **CI GitHub Actions échouée** : `npm run lint` → `react-hooks/set-state-in-effect` (setState synchrone dans l'effet de CookieBanner.tsx). Les runs précédents passaient (a0f01a9 ✅).
+- Fix 2da4d0a : CookieBanner refactorisé avec `useSyncExternalStore` (pattern idiomatique pour lire localStorage, lint-clean, hydration-safe). Vérifié en navigateur : accept/refuse OK, visiteur de retour → bandeau masqué après hydratation, 0 erreur d'hydratation.
+- CI 2da4d0a : **success** ✅ (lint + build). Vercel redéployé, site 200.
