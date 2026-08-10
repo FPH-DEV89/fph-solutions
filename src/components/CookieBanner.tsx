@@ -1,39 +1,44 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useSyncExternalStore } from "react"
 import Link from "next/link"
 
-export default function CookieBanner() {
-  const [visible, setVisible] = useState(false)
+const CONSENT_KEY = "fph-consent"
 
-  useEffect(() => {
-    try {
-      const consent = localStorage.getItem("fph-consent")
-      if (consent === null) {
-        setVisible(true)
-      }
-    } catch {
-      setVisible(true)
-    }
-  }, [])
+// Lecture du choix de consentement (store externe : localStorage).
+// getSnapshot retourne une primitive (string | null) → comparaison par valeur stable.
+function getConsentSnapshot(): string | null {
+  try {
+    return localStorage.getItem(CONSENT_KEY)
+  } catch {
+    return "refused" // stockage indisponible → pas de mesure d'audience
+  }
+}
+
+function subscribeConsent(callback: () => void) {
+  window.addEventListener("fph-consent-changed", callback)
+  return () => window.removeEventListener("fph-consent-changed", callback)
+}
+
+export default function CookieBanner() {
+  const consent = useSyncExternalStore(subscribeConsent, getConsentSnapshot, () => null)
+
+  // Choix déjà enregistré (accepted ou refused) → bandeau masqué.
+  if (consent !== null) return null
 
   const handleAccept = () => {
     try {
-      localStorage.setItem("fph-consent", "accepted")
+      localStorage.setItem(CONSENT_KEY, "accepted")
     } catch {}
     window.dispatchEvent(new Event("fph-consent-changed"))
-    setVisible(false)
   }
 
   const handleRefuse = () => {
     try {
-      localStorage.setItem("fph-consent", "refused")
+      localStorage.setItem(CONSENT_KEY, "refused")
     } catch {}
     window.dispatchEvent(new Event("fph-consent-changed"))
-    setVisible(false)
   }
-
-  if (!visible) return null
 
   return (
     <div
