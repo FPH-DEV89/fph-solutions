@@ -1,0 +1,312 @@
+{
+  "eslint.config.mjs": {
+    "mtime": 1784126401.1029725,
+    "ast_hash": "dfa1f5f6a7037bf39dc510f30b180002",
+    "semantic_hash": "dfa1f5f6a7037bf39dc510f30b180002"
+  },
+  "next.config.ts": {
+    "mtime": 1786363636.0397425,
+    "ast_hash": "b7dcdc0cf7041a5dcf0aec979c7b2f7f",
+    "semantic_hash": "b7dcdc0cf7041a5dcf0aec979c7b2f7f"
+  },
+  "package.json": {
+    "mtime": 1786363636.0417426,
+    "ast_hash": "e3046c7cbc0f2977fce7c52628ccfd92",
+    "semantic_hash": "e3046c7cbc0f2977fce7c52628ccfd92"
+  },
+  "postcss.config.mjs": {
+    "mtime": 1784126401.1029725,
+    "ast_hash": "239f3ebf717465dc636818a1a619398d",
+    "semantic_hash": "239f3ebf717465dc636818a1a619398d"
+  },
+  "src/app/(pages)/cgu/page.tsx": {
+    "mtime": 1786388515.31217,
+    "ast_hash": "f432916cae110704032cda48cc3cf414",
+    "semantic_hash": "f432916cae110704032cda48cc3cf414"
+  },
+  "src/app/(pages)/mentions-legales/page.tsx": {
+    "mtime": 1786388899.5573013,
+    "ast_hash": "f2ada3b5d1a4525b40e770da379a9f8b",
+    "semantic_hash": "f2ada3b5d1a4525b40e770da379a9f8b"
+  },
+  "src/app/(pages)/politique-de-confidentialite/page.tsx": {
+    "mtime": 1786388533.7580328,
+    "ast_hash": "c7734ada2b4939cac1438e73ef62d236",
+    "semantic_hash": "c7734ada2b4939cac1438e73ef62d236"
+  },
+  "src/app/(pages)/politique-de-cookies/page.tsx": {
+    "mtime": 1786388509.0362165,
+    "ast_hash": "74d703f6dd3e5da75c2b489d55e63f1b",
+    "semantic_hash": "74d703f6dd3e5da75c2b489d55e63f1b"
+  },
+  "src/app/(pages)/projets/[slug]/page.tsx": {
+    "mtime": 1786363646.6366737,
+    "ast_hash": "4352520df961c6dd117141ae621349d5",
+    "semantic_hash": "4352520df961c6dd117141ae621349d5"
+  },
+  "src/app/(pages)/projets/page.tsx": {
+    "mtime": 1786363646.6366737,
+    "ast_hash": "096f7c5ab5e30f3ef5f92f21c57d0265",
+    "semantic_hash": "096f7c5ab5e30f3ef5f92f21c57d0265"
+  },
+  "src/app/api/contact/route.ts": {
+    "mtime": 1786388550.1399112,
+    "ast_hash": "fbe8979655d95339b362629c17ff01df",
+    "semantic_hash": "fbe8979655d95339b362629c17ff01df"
+  },
+  "src/app/layout.tsx": {
+    "mtime": 1786388544.5289528,
+    "ast_hash": "0c652e72235a80b1a7cddbd8740126a9",
+    "semantic_hash": "0c652e72235a80b1a7cddbd8740126a9"
+  },
+  "src/app/page.tsx": {
+    "mtime": 1786363636.0447426,
+    "ast_hash": "9b05e31e4a66f992b7a0c0e07c14939e",
+    "semantic_hash": "9b05e31e4a66f992b7a0c0e07c14939e"
+  },
+  "src/app/sitemap.ts": {
+    "mtime": 1786388556.6678627,
+    "ast_hash": "44f29d2c28620033a04cc9baa080326b",
+    "semantic_hash": "44f29d2c28620033a04cc9baa080326b"
+  },
+  "src/components/About.tsx": {
+    "mtime": 1786363636.0447426,
+    "ast_hash": "8ccc27199ce9211c854a2f288840b483",
+    "semantic_hash": "8ccc27199ce9211c854a2f288840b483"
+  },
+  "src/components/AnalyticsWithConsent.tsx": {
+    "mtime": 1786388541.808973,
+    "ast_hash": "7ccfb05305d0bd8abfed6ef1f5204eeb",
+    "semantic_hash": "7ccfb05305d0bd8abfed6ef1f5204eeb"
+  },
+  "src/components/ContactForm.tsx": {
+    "mtime": 1786388547.8179283,
+    "ast_hash": "bc0cbb755814ac3b2b25cc2f003474f1",
+    "semantic_hash": "bc0cbb755814ac3b2b25cc2f003474f1"
+  },
+  "src/components/CookieBanner.tsx": {
+    "mtime": 1786389877.3995705,
+    "ast_hash": "dd462330302d1b20c075dbe3eafdbc2b",
+    "semantic_hash": "dd462330302d1b20c075dbe3eafdbc2b"
+  },
+  "src/components/FAQ.tsx": {
+    "mtime": 1786363636.0447426,
+    "ast_hash": "30cb82152b435918a4c6c57660ef2608",
+    "semantic_hash": "30cb82152b435918a4c6c57660ef2608"
+  },
+  "src/components/Footer.tsx": {
+    "mtime": 1786388554.0858817,
+    "ast_hash": "d11d135f469e3b198dfc7180f0d6b748",
+    "semantic_hash": "d11d135f469e3b198dfc7180f0d6b748"
+  },
+  "src/components/Header.tsx": {
+    "mtime": 1786363636.0457425,
+    "ast_hash": "afc35ce3212aeafa761f120794f9d3e6",
+    "semantic_hash": "afc35ce3212aeafa761f120794f9d3e6"
+  },
+  "src/components/Hero.tsx": {
+    "mtime": 1786363636.0457425,
+    "ast_hash": "e28677e144c39b8b15d90c4c39961324",
+    "semantic_hash": "e28677e144c39b8b15d90c4c39961324"
+  },
+  "src/components/ProjectCard.tsx": {
+    "mtime": 1786363646.6366737,
+    "ast_hash": "6436d4e9d3d8ad30740b567324e447e1",
+    "semantic_hash": "6436d4e9d3d8ad30740b567324e447e1"
+  },
+  "src/components/ProjectGrid.tsx": {
+    "mtime": 1784126886.9856257,
+    "ast_hash": "8570d5162bf063d07f24d11f97b9d12d",
+    "semantic_hash": "8570d5162bf063d07f24d11f97b9d12d"
+  },
+  "src/components/Services.tsx": {
+    "mtime": 1786363636.0457425,
+    "ast_hash": "42925468c36c90264e1ec0ada6722c6e",
+    "semantic_hash": "42925468c36c90264e1ec0ada6722c6e"
+  },
+  "src/components/SocialProof.tsx": {
+    "mtime": 1786363636.0457425,
+    "ast_hash": "01bf5b752b962f3e76db4b6956a8cc75",
+    "semantic_hash": "01bf5b752b962f3e76db4b6956a8cc75"
+  },
+  "src/components/ThemeToggle.tsx": {
+    "mtime": 1786363636.0457425,
+    "ast_hash": "e8c2bf3a43f9c0b7db994b0e6f87c94d",
+    "semantic_hash": "e8c2bf3a43f9c0b7db994b0e6f87c94d"
+  },
+  "src/data/Projects.tsx": {
+    "mtime": 1786363636.0457425,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "src/data/projects.ts": {
+    "mtime": 1786363646.6366737,
+    "ast_hash": "c9c314450eda585cc7f08d584ed8e979",
+    "semantic_hash": "c9c314450eda585cc7f08d584ed8e979"
+  },
+  "src/lib/utils.ts": {
+    "mtime": 1784126799.4071488,
+    "ast_hash": "0d28498eb2a87dcc576693bb19b9f489",
+    "semantic_hash": "0d28498eb2a87dcc576693bb19b9f489"
+  },
+  "tsconfig.json": {
+    "mtime": 1784126401.1049724,
+    "ast_hash": "ee17fd1c97c735e9f3564e3f5251f125",
+    "semantic_hash": "ee17fd1c97c735e9f3564e3f5251f125"
+  },
+  "vercel.json": {
+    "mtime": 1784126837.6749232,
+    "ast_hash": "81ee3cbba8bb2ac2232f499eeb725809",
+    "semantic_hash": "81ee3cbba8bb2ac2232f499eeb725809"
+  },
+  ".github/dependabot.yml": {
+    "mtime": 1784127402.9222007,
+    "ast_hash": "069b829ee7bedd79d43b5a555927e2da",
+    "semantic_hash": "069b829ee7bedd79d43b5a555927e2da"
+  },
+  ".github/workflows/ci.yml": {
+    "mtime": 1786363636.0397425,
+    "ast_hash": "84209caa70b619ed10bf22038cd5e84b",
+    "semantic_hash": "84209caa70b619ed10bf22038cd5e84b"
+  },
+  "AGENTS.md": {
+    "mtime": 1784126432.3867295,
+    "ast_hash": "9e09241799026ac05be315a2f0b50055",
+    "semantic_hash": "9e09241799026ac05be315a2f0b50055"
+  },
+  "CLAUDE.md": {
+    "mtime": 1784126432.3867295,
+    "ast_hash": "5c27369b226fcf2be8a6cfe52224e767",
+    "semantic_hash": "5c27369b226fcf2be8a6cfe52224e767"
+  },
+  "DEPLOY.md": {
+    "mtime": 1784128329.224435,
+    "ast_hash": "bc0dfc6c41b6c1b5e267925aaaa5c8bb",
+    "semantic_hash": "bc0dfc6c41b6c1b5e267925aaaa5c8bb"
+  },
+  "README.md": {
+    "mtime": 1784128334.3943965,
+    "ast_hash": "9d3819b830fb73df699a45d40403655e",
+    "semantic_hash": "9d3819b830fb73df699a45d40403655e"
+  },
+  "evidence/2026-08-10-rgpd-compliance.md": {
+    "mtime": 1786390084.4937456,
+    "ast_hash": "51e91c6bb640d9594d99767da4dce1b8",
+    "semantic_hash": "51e91c6bb640d9594d99767da4dce1b8"
+  },
+  "public/index.html": {
+    "mtime": 1784126835.1779382,
+    "ast_hash": "6c1d52d36ae752a0c9abb3deecdb9cb5",
+    "semantic_hash": "6c1d52d36ae752a0c9abb3deecdb9cb5"
+  },
+  "public/robots.txt": {
+    "mtime": 1784132831.8890052,
+    "ast_hash": "6e4c1d8df09fec6e71476b46b30485b8",
+    "semantic_hash": "6e4c1d8df09fec6e71476b46b30485b8"
+  },
+  "public/file.svg": {
+    "mtime": 1784126401.1029725,
+    "ast_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71",
+    "semantic_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71"
+  },
+  "public/globe.svg": {
+    "mtime": 1784126401.1029725,
+    "ast_hash": "2aaafa6a49b6563925fe440891e32717",
+    "semantic_hash": "2aaafa6a49b6563925fe440891e32717"
+  },
+  "public/images/florian-philibert.webp": {
+    "mtime": 1786363636.0427425,
+    "ast_hash": "8c6fbd1905e05456d22ded99e0c64e89",
+    "semantic_hash": "8c6fbd1905e05456d22ded99e0c64e89"
+  },
+  "public/images/freshr.webp": {
+    "mtime": 1786363636.0427425,
+    "ast_hash": "68ab2547fd0de1bd8514443c54090e4e",
+    "semantic_hash": "68ab2547fd0de1bd8514443c54090e4e"
+  },
+  "public/images/logo_1_refined.webp": {
+    "mtime": 1786363636.0427425,
+    "ast_hash": "dc1f36b080b9052ae5f00ef4006032ae",
+    "semantic_hash": "dc1f36b080b9052ae5f00ef4006032ae"
+  },
+  "public/next.svg": {
+    "mtime": 1784126401.1029725,
+    "ast_hash": "8e061864f388b47f33a1c3780831193e",
+    "semantic_hash": "8e061864f388b47f33a1c3780831193e"
+  },
+  "public/og-default.svg": {
+    "mtime": 1784132884.7806149,
+    "ast_hash": "50ad4fdea631a7161d31962f3b6f1eca",
+    "semantic_hash": "50ad4fdea631a7161d31962f3b6f1eca"
+  },
+  "public/projects/gestion-epi-full.webp": {
+    "mtime": 1786363673.6834972,
+    "ast_hash": "d80cd0b0b6d45db836d614d68ca06b83",
+    "semantic_hash": "d80cd0b0b6d45db836d614d68ca06b83"
+  },
+  "public/projects/gestion-epi.webp": {
+    "mtime": 1786363673.6804972,
+    "ast_hash": "5efa8d2de1b23d638704a14f56aa0a49",
+    "semantic_hash": "5efa8d2de1b23d638704a14f56aa0a49"
+  },
+  "public/projects/maxpatrie-full.webp": {
+    "mtime": 1786363673.7064972,
+    "ast_hash": "6cdf3ea1e2737fdd86b1ca0d85bf025f",
+    "semantic_hash": "6cdf3ea1e2737fdd86b1ca0d85bf025f"
+  },
+  "public/projects/maxpatrie.webp": {
+    "mtime": 1786363673.702497,
+    "ast_hash": "803f0324ec02cb590e2cb015cac5176d",
+    "semantic_hash": "803f0324ec02cb590e2cb015cac5176d"
+  },
+  "public/projects/sobe-plomberie-full.webp": {
+    "mtime": 1786363673.691497,
+    "ast_hash": "ba902ea4017ef74fd33af04298fae063",
+    "semantic_hash": "ba902ea4017ef74fd33af04298fae063"
+  },
+  "public/projects/sobe-plomberie.webp": {
+    "mtime": 1786363673.6874971,
+    "ast_hash": "b52938d421391dee3fbb2e986f437e77",
+    "semantic_hash": "b52938d421391dee3fbb2e986f437e77"
+  },
+  "public/projects/trackrma-full.webp": {
+    "mtime": 1786363673.6774971,
+    "ast_hash": "bcc7f8e772de6f5c7832d99d4259a464",
+    "semantic_hash": "bcc7f8e772de6f5c7832d99d4259a464"
+  },
+  "public/projects/trackrma.webp": {
+    "mtime": 1786363673.6734972,
+    "ast_hash": "629b73f128e4f93d82d0ae0da6d403e1",
+    "semantic_hash": "629b73f128e4f93d82d0ae0da6d403e1"
+  },
+  "public/projects/wedding-planner-full.webp": {
+    "mtime": 1786363638.9657235,
+    "ast_hash": "eda7b8f36e78a2f72e0e6c892d68bc27",
+    "semantic_hash": "eda7b8f36e78a2f72e0e6c892d68bc27"
+  },
+  "public/projects/wedding-planner.webp": {
+    "mtime": 1786363638.9667234,
+    "ast_hash": "c41286befe772f68957ba9aae8c40ee9",
+    "semantic_hash": "c41286befe772f68957ba9aae8c40ee9"
+  },
+  "public/projects/zenflow-full.webp": {
+    "mtime": 1786363673.698497,
+    "ast_hash": "4a1c8565eb919593d40abcc3c4394c4c",
+    "semantic_hash": "4a1c8565eb919593d40abcc3c4394c4c"
+  },
+  "public/projects/zenflow.webp": {
+    "mtime": 1786363673.695497,
+    "ast_hash": "7e2c781df37be3371d1bca1212b17e54",
+    "semantic_hash": "7e2c781df37be3371d1bca1212b17e54"
+  },
+  "public/vercel.svg": {
+    "mtime": 1784126401.1039724,
+    "ast_hash": "c0af2f507b369b085b35ef4bbe3bcf1e",
+    "semantic_hash": "c0af2f507b369b085b35ef4bbe3bcf1e"
+  },
+  "public/window.svg": {
+    "mtime": 1784126401.1039724,
+    "ast_hash": "a2760511c65806022ad20adf74370ff3",
+    "semantic_hash": "a2760511c65806022ad20adf74370ff3"
+  }
+}
