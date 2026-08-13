@@ -105,6 +105,15 @@ export default function ContactForm() {
             method="POST"
             className="space-y-5"
           >
+            {/* Honeypot anti-spam — invisible pour les humains, les bots le remplissent */}
+            <input
+              type="text"
+              name="website"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              className="hidden"
+            />
             {error && (
               <p className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-500 text-center">
                 {error}

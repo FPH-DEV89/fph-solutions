@@ -52,6 +52,26 @@ export default async function ProjectDetailPage({
     ],
   }
 
+  const softwareSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: project.title,
+    description: project.description,
+    applicationCategory:
+      project.category === "site" ? "WebApplication" : "BusinessApplication",
+    operatingSystem: "Web",
+    url: project.links.demo ?? `https://fph-solutions.com/projets/${project.slug}`,
+    ...(project.image
+      ? { screenshot: `https://fph-solutions.com${project.image}` }
+      : {}),
+    creator: {
+      "@type": "Organization",
+      name: "FPH Solutions",
+      url: "https://fph-solutions.com",
+    },
+    datePublished: `${project.year}-01-01`,
+  }
+
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       {/* Back link */}
@@ -59,6 +79,10 @@ export default async function ProjectDetailPage({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
         />
         <Link
           href="/projets"

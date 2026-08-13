@@ -39,6 +39,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://fph-solutions.com",
   },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/icon-192.png",
+  },
+  manifest: "/manifest.webmanifest",
   openGraph: {
     type: "website",
     locale: "fr_FR",
@@ -114,12 +119,18 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-dvh bg-background text-foreground antialiased transition-colors duration-300">
+        <a
+          href="#contenu"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-[#a855f7] focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white"
+        >
+          Aller au contenu
+        </a>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <Header />
-        <main className="flex flex-col">{children}</main>
+        <main id="contenu" className="flex flex-col">{children}</main>
         <Footer />
         <CookieBanner />
         <AnalyticsWithConsent />
