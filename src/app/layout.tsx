@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     url: "https://fph-solutions.com",
     images: [
       {
-        url: "https://fph-solutions.com/og-default.svg",
+        url: "https://fph-solutions.com/og-default.png",
         width: 1200,
         height: 630,
         alt: "FPH Solutions",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     title: "FPH Solutions — Solutions logicielles sur mesure",
     description:
       "Applications web sur mesure avec Next.js, React et TypeScript.",
-    images: ["https://fph-solutions.com/og-default.svg"],
+    images: ["https://fph-solutions.com/og-default.png"],
   },
   robots: {
     index: true,
