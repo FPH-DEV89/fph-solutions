@@ -147,9 +147,14 @@ export default async function ProjectDetailPage({
 
       {/* Description longue */}
       <section className="mx-auto max-w-4xl px-6 pb-16">
-        <p className="text-lg leading-relaxed text-zinc-700 dark:text-zinc-300">
-          {project.longDescription}
-        </p>
+        {project.longDescription.split("\n\n").map((paragraph, i) => (
+          <p
+            key={i}
+            className="mb-4 text-lg leading-relaxed text-zinc-700 dark:text-zinc-300 last:mb-0"
+          >
+            {paragraph}
+          </p>
+        ))}
       </section>
 
       {/* Highlights */}
