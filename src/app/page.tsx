@@ -8,7 +8,10 @@ import SocialProofSection from "@/components/SocialProof"
 import Link from "next/link"
 import { projects, faqItems } from "@/data/projects"
 
-const featuredProjects = projects.slice(0, 4)
+const featuredProjects = [
+  ...projects.filter((p) => p.slug !== "maxpatrie").slice(0, 3),
+  projects.find((p) => p.slug === "maxpatrie")!,
+]
 
 const faqSchema = {
   "@context": "https://schema.org",
