@@ -18,6 +18,29 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: "cmz",
+    title: "Charge Mentale Zéro",
+    subtitle: "L'app familiale tout-en-un",
+    description: "Application familiale complète : tâches partagées, courses intelligentes, repas de la semaine, calendrier, budget, rappels push et commande vocale. Pensez moins, vivez mieux.",
+    longDescription: "Charge Mentale Zéro est née d'un constat simple : dans une famille, la charge mentale repose souvent sur une seule personne. Les listes s'empilent, les rendez-vous se perdent, et les courses se décident dans l'urgence. CMZ centralise tout au même endroit, pour que l'organisation du quotidien ne soit plus un poids.\n\nTâches partagées ou personnelles, liste de courses avec catégorisation intelligente, repas de la semaine, calendrier familial, budget par catégorie : chaque membre voit ce qu'il doit voir et peut agir d'un geste. Les rappels push configurables (5 minutes à 2 jours avant) arrivent sur le téléphone au bon moment, et la commande vocale permet de dicter « ajoute du lait aux courses » sans ouvrir l'application.\n\nL'app a été conçue avec une vraie famille utilisatrice, puis redessinée avec un design system clair et chaleureux (fond blanc, accent orange, grandes cartes arrondies). Déployée sur Vercel avec PostgreSQL, elle est pensée pour être utilisée au quotidien sur mobile comme sur ordinateur, y compris hors connexion.\n\nCôté technique : Next.js, React, TypeScript, Tailwind, Drizzle ORM, Supabase PostgreSQL, notifications web push et IA vocale.",
+    tags: ["Next.js", "TypeScript", "PostgreSQL", "Drizzle", "PWA"],
+    image: "/projects/cmz.webp",
+    imageFull: "/projects/cmz-full.webp",
+    links: {
+      github: "https://github.com/FPH-DEV89/cmz-app",
+      demo: "https://cmz.fph-solutions.com",
+    },
+    highlights: [
+      "Tâches, courses, repas, calendrier et budget au même endroit",
+      "Rappels push configurables sur mobile",
+      "Commande vocale pour dicter courses et tâches",
+      "Visibilité perso / partagé par membre",
+      "PWA installable, utilisable hors connexion",
+    ],
+    year: "2026",
+    category: "app",
+  },
+  {
     slug: "trackrma",
     title: "Trackrma",
     subtitle: "Application SAV intelligente",
