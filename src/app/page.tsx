@@ -9,8 +9,8 @@ import Link from "next/link"
 import { projects, faqItems } from "@/data/projects"
 
 const featuredProjects = [
-  ...projects.filter((p) => p.slug !== "maxpatrie").slice(0, 3),
-  projects.find((p) => p.slug === "maxpatrie")!,
+  ...projects.filter((p) => p.slug !== "cap-sur-valencia").slice(0, 3),
+  projects.find((p) => p.slug === "cap-sur-valencia")!,
 ]
 
 const faqSchema = {
