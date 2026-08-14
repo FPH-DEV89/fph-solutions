@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero"
-import ProjectGrid from "@/components/ProjectGrid"
+import ProjectCarousel from "@/components/ProjectCarousel"
 import ServicesSection from "@/components/Services"
 import FAQSection from "@/components/FAQ"
 import ContactForm from "@/components/ContactForm"
@@ -50,7 +50,7 @@ export default function HomePage() {
               projet est pensé pour être performant et visuellement soigné.
             </p>
           </div>
-          <ProjectGrid projects={featuredProjects} />
+          <ProjectCarousel projects={featuredProjects} />
           <div className="mt-12 text-center">
             <Link
               href="/projets"
