@@ -4,6 +4,7 @@ description: "Sans être développeur, j'ai livré 5 applications en production 
 date: "2026-08-16"
 slug: "5-apps-agent-ia-vrai-cout"
 tags: ["IA", "No-code", "Automatisation"]
+image: "/blog/5-apps-agent-ia-vrai-cout.webp"
 published: true
 ---
 
