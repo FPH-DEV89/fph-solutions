@@ -7,8 +7,18 @@ import type { Project } from '@/data/projects'
 
 function subscribeToMediaQuery(callback: () => void) {
   const mql = window.matchMedia('(min-width: 768px)')
-  mql.addEventListener('change', callback)
-  return () => mql.removeEventListener('change', callback)
+  if (typeof mql.addEventListener === 'function') {
+    mql.addEventListener('change', callback)
+  } else {
+    mql.addListener(callback)
+  }
+  return () => {
+    if (typeof mql.removeEventListener === 'function') {
+      mql.removeEventListener('change', callback)
+    } else {
+      mql.removeListener(callback)
+    }
+  }
 }
 
 function getDesktopSnapshot() {
@@ -16,7 +26,7 @@ function getDesktopSnapshot() {
 }
 
 function getDesktopServerSnapshot() {
-  return true
+  return false
 }
 
 function useIsDesktop() {
@@ -63,14 +73,23 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
   const totalPages = Math.max(1, Math.ceil((projects?.length ?? 0) / perView))
   const safePage = currentPage % totalPages
 
+  const [prevTotalPages, setPrevTotalPages] = useState(totalPages)
+  if (prevTotalPages !== totalPages) {
+    setPrevTotalPages(totalPages)
+    setCurrentPage((prev) => prev % totalPages)
+  }
+
   const paginate = useCallback(
     (newDirection: number) => {
+      if (newDirection === 0) return
       setDirection(newDirection)
       setCurrentPage((prev) => {
+        if (newDirection === 0) return prev
+        const normalized = prev % totalPages
         if (newDirection > 0) {
-          return (prev + 1) % totalPages
+          return (normalized + 1) % totalPages
         }
-        return (prev - 1 + totalPages) % totalPages
+        return (normalized - 1 + totalPages) % totalPages
       })
     },
     [totalPages]
@@ -91,11 +110,39 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
   useEffect(() => {
     if (isHovered || prefersReducedMotion || totalPages <= 1) return
 
-    const interval = setInterval(() => {
-      paginate(1)
-    }, 5000)
+    let intervalId: ReturnType<typeof setInterval> | null = null
 
-    return () => clearInterval(interval)
+    const startTimer = () => {
+      if (typeof document !== 'undefined' && document.hidden) return
+      if (!intervalId) {
+        intervalId = setInterval(() => {
+          paginate(1)
+        }, 5000)
+      }
+    }
+
+    const stopTimer = () => {
+      if (intervalId) {
+        clearInterval(intervalId)
+        intervalId = null
+      }
+    }
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        stopTimer()
+      } else {
+        startTimer()
+      }
+    }
+
+    startTimer()
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+
+    return () => {
+      stopTimer()
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
+    }
   }, [isHovered, prefersReducedMotion, totalPages, paginate])
 
   if (!projects || projects.length === 0) {
@@ -151,7 +198,11 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
       )}
 
       {/* Cards container */}
-      <div className="overflow-hidden rounded-2xl px-1 py-2">
+      <div
+        className="overflow-hidden rounded-2xl px-1 py-2"
+        aria-live="polite"
+        aria-atomic="true"
+      >
         <AnimatePresence mode="wait" initial={false} custom={direction}>
           <motion.div
             key={safePage}
