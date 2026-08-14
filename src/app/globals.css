@@ -42,3 +42,49 @@ body {
   background: rgba(168, 85, 247, 0.3);
   color: inherit;
 }
+
+/* Blog prose */
+.blog-prose h2 {
+  @apply text-2xl font-bold tracking-tight text-foreground mt-10 mb-4;
+}
+
+.blog-prose h3 {
+  @apply text-xl font-semibold text-foreground mt-8 mb-3;
+}
+
+.blog-prose p {
+  @apply mb-5 leading-relaxed text-zinc-700 dark:text-zinc-300;
+}
+
+.blog-prose ul {
+  @apply mb-5 pl-5 list-disc space-y-2 text-zinc-700 dark:text-zinc-300;
+}
+
+.blog-prose ol {
+  @apply mb-5 pl-5 list-decimal space-y-2 text-zinc-700 dark:text-zinc-300;
+}
+
+.blog-prose li {
+  @apply leading-relaxed;
+}
+
+.blog-prose strong {
+  @apply font-semibold text-foreground;
+}
+
+.blog-prose blockquote {
+  @apply border-l-4 border-violet-500 pl-4 italic text-zinc-600 dark:text-zinc-400 my-6;
+}
+
+.blog-prose a {
+  @apply text-violet-500 underline hover:text-violet-400;
+}
+
+.blog-prose code {
+  @apply rounded bg-zinc-100 px-1.5 py-0.5 font-mono text-sm text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200;
+}
+
+.blog-prose hr {
+  @apply my-8 border-zinc-200 dark:border-zinc-800;
+}
+

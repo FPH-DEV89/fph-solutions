@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next"
 import { projects } from "@/data/projects"
+import { getPosts } from "@/lib/posts"
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://fph-solutions.com"
 
   // Static pages
@@ -17,6 +18,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/mentions-legales`,
@@ -52,5 +59,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  return [...staticPages, ...projectPages]
+  // Blog pages
+  const posts = await getPosts()
+  const blogPages = posts.map((post) => {
+    const d = post.date ? new Date(post.date) : new Date()
+    return {
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: isNaN(d.getTime()) ? new Date() : d,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    }
+  })
+
+  return [...staticPages, ...projectPages, ...blogPages]
 }
+
