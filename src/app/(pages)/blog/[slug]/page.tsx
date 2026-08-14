@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import {
@@ -152,6 +153,22 @@ export default async function BlogPostPage({ params }: Props) {
           <span>{readingTime(post.contentHtml)}</span>
         </div>
       </header>
+
+      {/* Hero Image */}
+      {post.image?.startsWith("/") && !post.image?.startsWith("//") && (
+        <section className="mx-auto max-w-4xl px-6 pb-12">
+          <div className="overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900 shadow-xl relative aspect-video">
+            <Image
+              src={post.image}
+              alt={post.title}
+              fill
+              sizes="(max-width: 896px) 100vw, 896px"
+              className="object-cover"
+              priority
+            />
+          </div>
+        </section>
+      )}
 
       {/* Markdown Content */}
       <div className="mx-auto max-w-4xl px-6 pb-24">

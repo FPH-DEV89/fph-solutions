@@ -41,6 +41,7 @@ export type PostMeta = {
   date: string;
   tags: string[];
   published: boolean;
+  image?: string;
 };
 
 export type Post = PostMeta & {
@@ -122,6 +123,7 @@ export const getPosts = cache(async (): Promise<Post[]> => {
           date: dateStr,
           tags,
           published,
+          image: typeof data.image === "string" ? data.image : undefined,
           contentHtml,
         });
       } catch (err) {
