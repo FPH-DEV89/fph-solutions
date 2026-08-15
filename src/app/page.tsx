@@ -9,7 +9,7 @@ import Link from "next/link"
 import { projects, faqItems } from "@/data/projects"
 
 const featuredProjects = [
-  ...projects.filter((p) => p.slug !== "cap-sur-valencia").slice(0, 3),
+  ...projects.filter((p) => p.slug !== "cap-sur-valencia").slice(0, 5),
   projects.find((p) => p.slug === "cap-sur-valencia")!,
 ]
 
@@ -36,13 +36,13 @@ export default function HomePage() {
       <Hero />
 
       {/* Projects Section */}
-      <section id="projects" className="bg-background py-24 sm:py-32 transition-colors duration-300">
+      <section id="projects" className="bg-background py-20 sm:py-24 transition-colors duration-300">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-14 text-center">
-            <p className="mb-3 text-sm font-medium uppercase tracking-widest text-[#a855f7]">
+            <p className="mb-3 text-sm font-medium uppercase tracking-widest text-[#00d4ff]">
               Portfolio
             </p>
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               Mes projets
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-zinc-400">
@@ -51,10 +51,10 @@ export default function HomePage() {
             </p>
           </div>
           <ProjectCarousel projects={featuredProjects} />
-          <div className="mt-12 text-center">
+          <div className="mt-8 text-center">
             <Link
               href="/projets"
-              className="inline-flex items-center gap-2 rounded-full border border-zinc-300 px-6 py-3 text-sm font-medium text-zinc-600 transition hover:border-[#a855f7] hover:text-[#a855f7] dark:border-zinc-700 dark:text-zinc-300"
+              className="inline-flex items-center gap-2 rounded-full border border-zinc-300 px-6 py-3 text-sm font-medium text-zinc-600 transition hover:border-[#00d4ff] hover:text-[#00d4ff] dark:border-zinc-700 dark:text-zinc-300"
             >
               Voir tous mes projets
               <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">

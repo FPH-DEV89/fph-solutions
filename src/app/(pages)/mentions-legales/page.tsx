@@ -11,7 +11,7 @@ export default function MentionsLegalesPage() {
       <div className="mx-auto max-w-3xl px-6">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 transition hover:text-violet-400 mb-8"
+          className="inline-flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 transition hover:text-cyan-400 mb-8"
         >
           <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
@@ -41,12 +41,12 @@ export default function MentionsLegalesPage() {
             <p>
               Le site est hébergé par <strong>Vercel Inc.</strong><br />
               <strong>Adresse :</strong> 340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis<br />
-              <strong>Site web :</strong> <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" className="text-[#a855f7] hover:underline">vercel.com</a>
+              <strong>Site web :</strong> <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" className="text-[#00d4ff] hover:underline">vercel.com</a>
             </p>
             <p>
               Le site est accéléré et protégé par le CDN <strong>Cloudflare Inc.</strong><br />
               <strong>Adresse :</strong> 101 Townsend St, San Francisco, CA 94107, États-Unis<br />
-              <strong>Site web :</strong> <a href="https://cloudflare.com" target="_blank" rel="noopener noreferrer" className="text-[#a855f7] hover:underline">cloudflare.com</a>
+              <strong>Site web :</strong> <a href="https://cloudflare.com" target="_blank" rel="noopener noreferrer" className="text-[#00d4ff] hover:underline">cloudflare.com</a>
             </p>
           </section>
 
@@ -74,8 +74,8 @@ export default function MentionsLegalesPage() {
             <h2 className="text-xl font-semibold text-foreground">5. Données personnelles</h2>
             <p>
               Les traitements de données personnelles réalisés sur ce site sont décrits dans notre{" "}
-              <Link href="/politique-de-confidentialite" className="text-[#a855f7] hover:underline">politique de confidentialité</Link>. La gestion des cookies et traceurs est détaillée dans notre{" "}
-              <Link href="/politique-de-cookies" className="text-[#a855f7] hover:underline">politique de cookies</Link>.
+              <Link href="/politique-de-confidentialite" className="text-[#00d4ff] hover:underline">politique de confidentialité</Link>. La gestion des cookies et traceurs est détaillée dans notre{" "}
+              <Link href="/politique-de-cookies" className="text-[#00d4ff] hover:underline">politique de cookies</Link>.
             </p>
             <p>
               Vous disposez d&apos;un droit d&apos;accès, de rectification, d&apos;effacement et d&apos;opposition sur vos données, que vous pouvez exercer à tout moment en écrivant à <strong>contact@fph-solutions.com</strong>, ou en introduisant une réclamation auprès de la CNIL (cnil.fr).

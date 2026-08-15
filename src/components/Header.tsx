@@ -1,10 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import ThemeToggle from "./ThemeToggle";
+import LiquidGlassLens from "./LiquidGlassLens";
 
 const NAV_LINKS = [
   { href: "/", label: "Accueil" },
@@ -19,29 +21,44 @@ const NAV_LINKS = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [glassActive, setGlassActive] = useState(false);
+  const pillRef = useRef<HTMLElement>(null);
 
   return (
     <motion.header
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className="sticky top-0 z-50 border-b border-zinc-200 dark:border-white/[0.06]"
+      className="sticky top-4 z-50 pointer-events-none"
     >
-      {/* Glassmorphism backdrop */}
-      <div className="absolute inset-0 bg-background/70 backdrop-blur-xl backdrop-saturate-150 transition-colors duration-300" />
-
-      <nav className="relative mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <LiquidGlassLens targetRef={pillRef} onActive={setGlassActive} />
+      
+      <nav
+        ref={pillRef}
+        className={cn(
+          "pointer-events-auto relative mx-auto flex max-w-fit items-center justify-between gap-1 rounded-full border border-zinc-900/10 dark:border-white/10 px-2.5 md:px-4 py-2 shadow-[0_8px_32px_rgba(0,0,0,0.35)] z-[60]",
+          glassActive
+            ? "bg-transparent backdrop-blur-none"
+            : "bg-background/55 backdrop-blur-md"
+        )}
+      >
         {/* Logo */}
         <Link
           href="/"
-          className="group flex items-center gap-2 text-lg font-bold tracking-tight text-foreground transition-colors"
+          className="group flex items-center gap-2.5 text-lg font-bold tracking-tight text-foreground transition-colors"
         >
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#a855f7] text-sm font-extrabold text-white shadow-[0_0_20px_rgba(168,85,247,0.3)]">
-            FP
+          <span className="relative">
+            <Image
+              src="/images/fph-logo-sm.webp"
+              alt="FPH Solutions"
+              width={32}
+              height={32}
+              className="h-8 w-8 rounded-lg object-cover ring-1 ring-cyan-400/30 shadow-[0_0_18px_rgba(0,212,255,0.25)] transition-shadow duration-300 group-hover:shadow-[0_0_26px_rgba(0,212,255,0.45)]"
+            />
           </span>
           <span>
             <span className="text-foreground">FPH</span>{" "}
-            <span className="text-[#a855f7]">Solutions</span>
+            <span className="text-[#00d4ff]">Solutions</span>
           </span>
         </Link>
 
@@ -61,7 +78,7 @@ export default function Header() {
             <ThemeToggle />
             <Link
               href="/#contact"
-              className="inline-flex items-center rounded-lg bg-[#a855f7] px-4 py-2 text-sm font-medium text-white shadow-[0_0_20px_rgba(168,85,247,0.25)] transition-all hover:bg-[#9333ea] hover:shadow-[0_0_30px_rgba(168,85,247,0.4)]"
+              className="inline-flex items-center rounded-lg bg-[#00d4ff] px-4 py-2 text-sm font-semibold text-[#06101f] shadow-[0_0_20px_rgba(0,212,255,0.25)] transition-all hover:bg-[#00b2ec] hover:shadow-[0_0_30px_rgba(0,212,255,0.4)]"
             >
               Contact
               <svg
@@ -133,7 +150,7 @@ export default function Header() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="relative overflow-hidden border-t border-zinc-200 dark:border-white/[0.06] bg-background/90 backdrop-blur-xl md:hidden"
+            className="absolute top-full left-1/2 mt-3 w-[calc(100vw-2rem)] max-w-md -translate-x-1/2 overflow-hidden rounded-2xl border border-zinc-200 dark:border-white/[0.06] bg-background/90 backdrop-blur-xl md:hidden pointer-events-auto"
           >
             <div className="flex flex-col gap-1 px-6 py-4">
               {NAV_LINKS.map(({ href, label }, i) => (
@@ -153,7 +170,7 @@ export default function Header() {
                     className={cn(
                       "flex items-center rounded-lg px-4 py-3 text-sm font-medium transition-colors",
                       href === "/#contact"
-                        ? "bg-[#a855f7] text-white shadow-[0_0_20px_rgba(168,85,247,0.25)]"
+                        ? "bg-[#00d4ff] text-[#06101f] shadow-[0_0_20px_rgba(0,212,255,0.25)]"
                         : "text-foreground/70 hover:text-foreground hover:bg-foreground/[0.06]"
                     )}
                   >

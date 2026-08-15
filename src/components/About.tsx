@@ -5,7 +5,7 @@ import Image from "next/image"
 
 export default function AboutSection() {
   return (
-    <section id="about" className="relative overflow-hidden bg-zinc-50 py-24 sm:py-32 dark:bg-[#0b0b0c] transition-colors duration-300">
+    <section id="about" className="relative overflow-hidden bg-zinc-50 py-24 sm:py-32 dark:bg-[#060d18] transition-colors duration-300">
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:32px]" />
       
       <div className="relative mx-auto max-w-6xl px-6">
@@ -16,7 +16,7 @@ export default function AboutSection() {
           transition={{ duration: 0.5 }}
           className="mb-16 text-center"
         >
-          <p className="mb-3 text-sm font-medium uppercase tracking-widest text-[#a855f7]">
+          <p className="mb-3 text-sm font-medium uppercase tracking-widest text-[#00d4ff]">
             À propos
           </p>
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -58,7 +58,7 @@ export default function AboutSection() {
                 Bonjour ! Je m&apos;appelle <strong>Florian Philibert</strong>. Passionné de technologie et de développement informatique, j&apos;ai fondé <strong>FPH Solutions</strong> pour accompagner les entreprises dans la création d&apos;applications web performantes, robustes et à forte valeur ajoutée.
               </p>
               <p>
-                Fort d&apos;un parcours technique solide incluant la conception d&apos;applications logistiques critiques pour des acteurs majeurs (notamment la gestion des retours SAV pour <strong>STEF Group</strong>), je me spécialise aujourd&apos;hui dans l&apos;écosystème <strong>Next.js, React et TypeScript</strong>.
+                Fort d&apos;un parcours technique solide incluant la conception d&apos;applications logistiques critiques pour des acteurs majeurs (notamment la gestion des retours SAV), je me spécialise aujourd&apos;hui dans l&apos;écosystème <strong>Next.js, React et TypeScript</strong>.
               </p>
               <p>
                 Mon approche privilégie la rigueur de développement, des interfaces fluides au pixel près (inspirées du design moderne et interactif) et une architecture propre qui garantit la scalabilité de vos projets sur le long terme.
@@ -68,15 +68,15 @@ export default function AboutSection() {
             {/* Key stats grid */}
             <div className="grid grid-cols-3 gap-6 border-t border-zinc-200 pt-8 dark:border-zinc-800/80">
               <div>
-                <p className="text-3xl font-bold text-[#a855f7] sm:text-4xl">3+</p>
+                <p className="text-3xl font-bold text-[#00d4ff] sm:text-4xl">3+</p>
                 <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">Années d&apos;expérience</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-[#a855f7] sm:text-4xl">15+</p>
+                <p className="text-3xl font-bold text-[#00d4ff] sm:text-4xl">15+</p>
                 <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">Projets livrés</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-[#a855f7] sm:text-4xl">100%</p>
+                <p className="text-3xl font-bold text-[#00d4ff] sm:text-4xl">100%</p>
                 <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">De satisfaction</p>
               </div>
             </div>

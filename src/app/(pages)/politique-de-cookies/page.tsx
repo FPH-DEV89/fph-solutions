@@ -11,7 +11,7 @@ export default function PolitiqueCookiesPage() {
       <div className="mx-auto max-w-3xl px-6">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 transition hover:text-violet-400 mb-8"
+          className="inline-flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 transition hover:text-cyan-400 mb-8"
         >
           <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
@@ -57,7 +57,7 @@ export default function PolitiqueCookiesPage() {
               <li>Durée de conservation limitée à 90 jours par Vercel.</li>
             </ul>
             <p>
-              Pour plus d&apos;informations sur le traitement de vos données par Vercel Analytics, consultez la page dédiée&nbsp;: <a href="https://vercel.com/docs/analytics/privacy" target="_blank" rel="noopener noreferrer" className="text-[#a855f7] hover:underline">vercel.com/docs/analytics/privacy</a>.
+              Pour plus d&apos;informations sur le traitement de vos données par Vercel Analytics, consultez la page dédiée&nbsp;: <a href="https://vercel.com/docs/analytics/privacy" target="_blank" rel="noopener noreferrer" className="text-[#00d4ff] hover:underline">vercel.com/docs/analytics/privacy</a>.
             </p>
           </section>
 
@@ -90,7 +90,7 @@ export default function PolitiqueCookiesPage() {
             </p>
             <p>
               Pour plus d&apos;informations sur la protection de vos données, consultez notre{" "}
-              <Link href="/politique-de-confidentialite" className="text-[#a855f7] hover:underline">politique de confidentialité</Link>.
+              <Link href="/politique-de-confidentialite" className="text-[#00d4ff] hover:underline">politique de confidentialité</Link>.
             </p>
           </section>
 

@@ -49,7 +49,7 @@ export default function CookieBanner() {
       <div className="flex flex-col sm:flex-row sm:items-center gap-4">
         <p className="flex-1 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
           Nous utilisons uniquement des cookies techniques (préférence de thème) et une mesure d&apos;audience anonyme sans cookie (Vercel Analytics).{" "}
-          <Link href="/politique-de-cookies" className="text-[#a855f7] hover:underline">
+          <Link href="/politique-de-cookies" className="text-[#00d4ff] hover:underline">
             En savoir plus
           </Link>
         </p>
@@ -57,14 +57,14 @@ export default function CookieBanner() {
           <button
             type="button"
             onClick={handleRefuse}
-            className="rounded-full border border-zinc-300 dark:border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-600 dark:text-zinc-300 transition hover:border-[#a855f7] hover:text-[#a855f7]"
+            className="rounded-full border border-zinc-300 dark:border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-600 dark:text-zinc-300 transition hover:border-[#00d4ff] hover:text-[#00d4ff]"
           >
             Tout refuser
           </button>
           <button
             type="button"
             onClick={handleAccept}
-            className="rounded-full bg-[#a855f7] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#9333ea]"
+            className="rounded-full bg-[#00d4ff] px-5 py-2.5 text-sm font-semibold text-[#06101f] transition hover:bg-[#00b2ec]"
           >
             Tout accepter
           </button>

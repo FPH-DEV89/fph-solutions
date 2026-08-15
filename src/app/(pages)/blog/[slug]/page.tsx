@@ -109,7 +109,7 @@ export default async function BlogPostPage({ params }: Props) {
         />
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 text-sm text-zinc-500 transition hover:text-violet-400 dark:text-zinc-400"
+          className="inline-flex items-center gap-2 text-sm text-zinc-500 transition hover:text-cyan-400 dark:text-zinc-400"
         >
           <svg
             className="h-4 w-4"

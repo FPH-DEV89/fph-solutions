@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     canonical: "https://fph-solutions.com",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.png",
     apple: "/icon-192.png",
   },
   manifest: "/manifest.webmanifest",
@@ -121,7 +121,7 @@ export default function RootLayout({
       <body className="min-h-dvh bg-background text-foreground antialiased transition-colors duration-300">
         <a
           href="#contenu"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-[#a855f7] focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-[#00a8e8] focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white"
         >
           Aller au contenu
         </a>

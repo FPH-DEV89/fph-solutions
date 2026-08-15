@@ -43,7 +43,7 @@ export default async function BlogPage() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group rounded-xl border border-zinc-200 bg-zinc-50/50 p-6 transition hover:border-violet-500/50 dark:border-zinc-800 dark:bg-zinc-900/50"
+                className="group rounded-xl border border-zinc-200 bg-zinc-50/50 p-6 transition hover:border-cyan-500/50 dark:border-zinc-800 dark:bg-zinc-900/50"
               >
                 <div className="flex flex-wrap items-center gap-3 text-xs text-zinc-500 dark:text-zinc-400">
                   <time dateTime={post.date}>
@@ -53,7 +53,7 @@ export default async function BlogPage() {
                   <span>{readingTime(post.contentHtml)}</span>
                 </div>
 
-                <h2 className="mt-3 text-xl font-bold text-foreground transition group-hover:text-violet-400">
+                <h2 className="mt-3 text-xl font-bold text-foreground transition group-hover:text-cyan-400">
                   {post.title}
                 </h2>
 

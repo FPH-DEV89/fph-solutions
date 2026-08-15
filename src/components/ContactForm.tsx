@@ -49,7 +49,7 @@ export default function ContactForm() {
           transition={{ duration: 0.5 }}
           className="mb-12 text-center"
         >
-          <p className="mb-3 text-sm font-medium uppercase tracking-widest text-[#a855f7]">
+          <p className="mb-3 text-sm font-medium uppercase tracking-widest text-[#00d4ff]">
             Contact
           </p>
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -67,7 +67,7 @@ export default function ContactForm() {
             animate={{ opacity: 1, scale: 1 }}
             className="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white/50 dark:bg-zinc-900/50 p-12 text-center"
           >
-            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#a855f7]/10 text-[#a855f7]">
+            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#00d4ff]/10 text-[#00d4ff]">
               <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
@@ -85,7 +85,7 @@ export default function ContactForm() {
                 href="https://cal.com/fph-solutions.com/15min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-11 items-center justify-center rounded-full bg-[#a855f7] px-6 text-sm font-medium text-white transition-all hover:bg-[#9333ea] hover:shadow-md active:scale-95"
+                className="inline-flex h-11 items-center justify-center rounded-full bg-[#00d4ff] px-6 text-sm font-semibold text-[#06101f] transition-all hover:bg-[#00b2ec] hover:shadow-md active:scale-95"
               >
                 Réserver un appel découverte (15 min)
               </a>
@@ -93,7 +93,7 @@ export default function ContactForm() {
 
             <p className="mt-6 text-sm text-zinc-500">
               Vous pouvez aussi m&apos;écrire directement à{" "}
-              <a href="mailto:contact@fph-solutions.com" className="text-[#a855f7] hover:underline">
+              <a href="mailto:contact@fph-solutions.com" className="text-[#00d4ff] hover:underline">
                 contact@fph-solutions.com
               </a>
             </p>
@@ -129,7 +129,7 @@ export default function ContactForm() {
                   id="name"
                   name="name"
                   required
-                  className="w-full rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/50 dark:bg-zinc-900/50 px-4 py-3 text-sm text-foreground placeholder-zinc-500 outline-none transition focus:border-[#a855f7] focus:ring-1 focus:ring-[#a855f7]/30"
+                  className="w-full rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/50 dark:bg-zinc-900/50 px-4 py-3 text-sm text-foreground placeholder-zinc-500 outline-none transition focus:border-[#00d4ff] focus:ring-1 focus:ring-[#00d4ff]/30"
                   placeholder="Votre nom"
                 />
               </div>
@@ -142,7 +142,7 @@ export default function ContactForm() {
                   id="email"
                   name="email"
                   required
-                  className="w-full rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/50 dark:bg-zinc-900/50 px-4 py-3 text-sm text-foreground placeholder-zinc-500 outline-none transition focus:border-[#a855f7] focus:ring-1 focus:ring-[#a855f7]/30"
+                  className="w-full rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/50 dark:bg-zinc-900/50 px-4 py-3 text-sm text-foreground placeholder-zinc-500 outline-none transition focus:border-[#00d4ff] focus:ring-1 focus:ring-[#00d4ff]/30"
                   placeholder="vous@exemple.fr"
                 />
               </div>
@@ -156,7 +156,7 @@ export default function ContactForm() {
                 name="message"
                 required
                 rows={5}
-                className="w-full rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/50 dark:bg-zinc-900/50 px-4 py-3 text-sm text-foreground placeholder-zinc-500 outline-none transition focus:border-[#a855f7] focus:ring-1 focus:ring-[#a855f7]/30 resize-none"
+                className="w-full rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/50 dark:bg-zinc-900/50 px-4 py-3 text-sm text-foreground placeholder-zinc-500 outline-none transition focus:border-[#00d4ff] focus:ring-1 focus:ring-[#00d4ff]/30 resize-none"
                 placeholder="Parlez-moi de votre projet..."
               />
             </div>
@@ -167,11 +167,11 @@ export default function ContactForm() {
                 name="consent"
                 value="true"
                 required
-                className="mt-0.5 h-4 w-4 shrink-0 accent-[#a855f7]"
+                className="mt-0.5 h-4 w-4 shrink-0 accent-[#00d4ff]"
               />
               <label htmlFor="consent" className="text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">
                 J&apos;accepte que mes données (nom, email, message) soient traitées par FPH Solutions pour répondre à ma demande, conformément à la{" "}
-                <Link href="/politique-de-confidentialite" className="text-[#a855f7] hover:underline">
+                <Link href="/politique-de-confidentialite" className="text-[#00d4ff] hover:underline">
                   politique de confidentialité
                 </Link>
                 . Je peux retirer mon consentement à tout moment.
@@ -181,7 +181,7 @@ export default function ContactForm() {
               <button
                 type="submit"
                 disabled={loading}
-                className="inline-flex h-12 items-center justify-center rounded-full bg-[#a855f7] px-10 text-sm font-medium text-white transition-all hover:bg-[#9333ea] hover:shadow-lg hover:shadow-[#a855f7]/25 active:scale-95 disabled:opacity-50"
+                className="inline-flex h-12 items-center justify-center rounded-full bg-[#00d4ff] px-10 text-sm font-semibold text-[#06101f] transition-all hover:bg-[#00b2ec] hover:shadow-lg hover:shadow-[#00d4ff]/25 active:scale-95 disabled:opacity-50"
               >
                 {loading ? "Envoi en cours..." : "Envoyer le message"}
               </button>
@@ -190,7 +190,7 @@ export default function ContactForm() {
                 href="https://cal.com/fph-solutions.com/15min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs font-semibold text-[#a855f7] hover:underline transition"
+                className="text-xs font-semibold text-[#00d4ff] hover:underline transition"
               >
                 Planifier un appel directement (15 min)
               </a>

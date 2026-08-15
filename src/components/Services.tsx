@@ -48,7 +48,7 @@ export default function ServicesSection() {
           transition={{ duration: 0.5 }}
           className="mb-16 text-center"
         >
-          <p className="mb-3 text-sm font-medium uppercase tracking-widest text-[#a855f7]">
+          <p className="mb-3 text-sm font-medium uppercase tracking-widest text-[#00d4ff]">
             Services
           </p>
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -68,9 +68,9 @@ export default function ServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.08 }}
-              className="group rounded-2xl border border-zinc-200 bg-zinc-50/50 p-6 transition hover:border-[#a855f7]/30 hover:bg-zinc-100/50 dark:border-zinc-800 dark:bg-zinc-900/30 dark:hover:bg-zinc-900/60"
+              className="group rounded-2xl border border-zinc-200 bg-zinc-50/50 p-6 transition hover:border-[#00d4ff]/30 hover:bg-zinc-100/50 dark:border-zinc-800 dark:bg-zinc-900/30 dark:hover:bg-zinc-900/60"
             >
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[#a855f7]/10 text-[#a855f7]">
+              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[#00d4ff]/10 text-[#00d4ff]">
                 {iconMap[service.icon] || iconMap.code}
               </div>
               <h3 className="mb-2 text-lg font-semibold text-foreground">{service.title}</h3>

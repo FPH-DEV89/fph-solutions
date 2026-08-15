@@ -8,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
       "Applications web sur mesure avec Next.js, React et TypeScript. Solutions SAV, sites vitrine, automatisation et IA.",
     start_url: "/",
     display: "standalone",
-    background_color: "#0a0a0a",
-    theme_color: "#0a0a0a",
+    background_color: "#081120",
+    theme_color: "#081120",
     icons: [
       {
         src: "/icon-192.png",

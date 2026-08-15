@@ -1,11 +1,20 @@
+"use client";
+
 import { faqItems } from "@/data/projects"
+import { motion } from "framer-motion"
 
 export default function FAQSection() {
   return (
     <section id="faq" className="bg-background py-24 sm:py-32 transition-colors duration-300">
       <div className="mx-auto max-w-3xl px-6">
-        <div className="mb-12 text-center">
-          <p className="mb-3 text-sm font-medium uppercase tracking-widest text-[#a855f7]">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-12 text-center"
+        >
+          <p className="mb-3 text-sm font-medium uppercase tracking-widest text-[#00d4ff]">
             FAQ
           </p>
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -14,13 +23,17 @@ export default function FAQSection() {
           <p className="mx-auto mt-4 max-w-lg text-zinc-600 dark:text-zinc-400">
             Tout ce que vous devez savoir avant de démarrer un projet.
           </p>
-        </div>
+        </motion.div>
 
         <div className="space-y-4">
           {faqItems.map((item, index) => (
-            <details
+            <motion.details
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.5, delay: 0.06 * index, ease: [0.22, 1, 0.36, 1] }}
               key={index}
-              className="group rounded-2xl border border-zinc-200 bg-zinc-50/50 dark:border-zinc-800 dark:bg-zinc-900/30 transition-colors duration-300 open:border-[#a855f7]/30 open:bg-zinc-100/50 open:dark:bg-zinc-900/60"
+              className="group rounded-2xl border border-zinc-200 bg-zinc-50/50 dark:border-zinc-800 dark:bg-zinc-900/30 transition-colors duration-300 open:border-[#00d4ff]/30 open:bg-zinc-100/50 open:dark:bg-zinc-900/60"
             >
               <summary className="flex cursor-pointer items-center justify-between px-6 py-5 text-left outline-none list-none [&::-webkit-details-marker]:hidden select-none">
                 <span className="pr-4 text-sm font-medium text-foreground sm:text-base">
@@ -41,7 +54,7 @@ export default function FAQSection() {
                   {item.answer}
                 </p>
               </div>
-            </details>
+            </motion.details>
           ))}
         </div>
       </div>

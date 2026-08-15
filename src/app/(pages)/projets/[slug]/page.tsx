@@ -86,7 +86,7 @@ export default async function ProjectDetailPage({
         />
         <Link
           href="/projets"
-          className="inline-flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 transition hover:text-violet-400"
+          className="inline-flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 transition hover:text-cyan-400"
         >
           <svg
             className="h-4 w-4"
@@ -114,7 +114,7 @@ export default async function ProjectDetailPage({
         <h1 className="mt-4 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
           {project.title}
         </h1>
-        <p className="mt-2 text-lg text-violet-400">{project.subtitle}</p>
+        <p className="mt-2 text-lg text-cyan-400">{project.subtitle}</p>
 
         <div className="mt-4 flex items-center gap-3">
           <span className="text-sm text-zinc-500 dark:text-zinc-400">{project.year}</span>
@@ -159,7 +159,7 @@ export default async function ProjectDetailPage({
 
       {/* Highlights */}
       <section className="mx-auto max-w-4xl px-6 pb-16">
-        <h2 className="mb-6 text-lg font-semibold uppercase tracking-widest text-violet-400">
+        <h2 className="mb-6 text-lg font-semibold uppercase tracking-widest text-cyan-400">
           Points clés
         </h2>
         <div className="grid gap-4 sm:grid-cols-2">
@@ -169,7 +169,7 @@ export default async function ProjectDetailPage({
               className="flex items-start gap-3 rounded-xl border border-zinc-200 bg-zinc-50/50 p-4 dark:border-zinc-800 dark:bg-zinc-900/50"
             >
               <svg
-                className="mt-0.5 h-5 w-5 shrink-0 text-violet-500"
+                className="mt-0.5 h-5 w-5 shrink-0 text-cyan-500"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth={2}
@@ -215,7 +215,7 @@ export default async function ProjectDetailPage({
               href={project.links.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl border border-zinc-200 bg-white px-5 py-3 text-sm font-medium text-zinc-700 transition hover:border-violet-600/50 hover:text-violet-400 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300"
+              className="inline-flex items-center gap-2 rounded-xl border border-zinc-200 bg-white px-5 py-3 text-sm font-medium text-zinc-700 transition hover:border-cyan-500/50 hover:text-cyan-400 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300"
             >
               <svg
                 className="h-5 w-5"
@@ -232,7 +232,7 @@ export default async function ProjectDetailPage({
               href={project.links.demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl border border-violet-200 bg-violet-50 px-5 py-3 text-sm font-medium text-violet-700 transition hover:bg-violet-100 dark:border-violet-700 dark:bg-violet-950/30 dark:text-violet-400 dark:hover:bg-violet-950/50"
+              className="inline-flex items-center gap-2 rounded-xl border border-cyan-200 bg-cyan-50 px-5 py-3 text-sm font-medium text-cyan-600 transition hover:bg-cyan-100 dark:border-cyan-600 dark:bg-cyan-950/30 dark:text-cyan-400 dark:hover:bg-cyan-950/50"
             >
               <svg
                 className="h-5 w-5"

@@ -11,7 +11,7 @@ export default function PolitiqueConfidentialitePage() {
       <div className="mx-auto max-w-3xl px-6">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 transition hover:text-violet-400 mb-8"
+          className="inline-flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 transition hover:text-cyan-400 mb-8"
         >
           <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
@@ -123,7 +123,7 @@ export default function PolitiqueConfidentialitePage() {
             <h2 className="text-xl font-semibold text-foreground">9. Cookies et traceurs</h2>
             <p>
               Le site n&apos;utilise aucun cookie publicitaire ou de suivi tiers. Les cookies techniques et la mesure d&apos;audience exemptée sont décrits dans notre{" "}
-              <Link href="/politique-de-cookies" className="text-[#a855f7] hover:underline">politique de cookies</Link>.
+              <Link href="/politique-de-cookies" className="text-[#00d4ff] hover:underline">politique de cookies</Link>.
             </p>
           </section>
 

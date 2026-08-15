@@ -1,6 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+import dynamic from "next/dynamic";
+
+const Hero3D = dynamic(() => import("@/components/Hero3D"), { ssr: false, loading: () => null });
 
 const technologies = ["Next.js", "React", "TypeScript", "Tailwind"];
 
@@ -9,36 +13,42 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.2,
+      staggerChildren: 0.12,
+      delayChildren: 0.15,
     },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 26 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.7,
-      ease: [0.25, 0.46, 0.45, 0.94] as const,
+      duration: 0.65,
+      ease: [0.22, 1, 0.36, 1] as const,
     },
   },
 };
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-background px-6 py-20 transition-colors duration-300">
-      {/* Subtle radial gradient overlay */}
+    <section className="relative flex min-h-[100dvh] w-full flex-col items-center justify-center overflow-hidden bg-background px-6 py-20 transition-colors duration-300">
+      {/* Circuit grid (blueprint) + radial glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 [background-image:linear-gradient(rgba(0,120,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(0,120,255,0.06)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:radial-gradient(ellipse_80%_70%_at_50%_38%,black_30%,transparent_78%)] dark:[background-image:linear-gradient(rgba(0,212,255,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(0,212,255,0.045)_1px,transparent_1px)]"
+      />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 80% 60% at 50% 40%, rgba(168,85,247,0.08) 0%, transparent 60%)",
+            "radial-gradient(ellipse 55% 45% at 50% 38%, rgba(0,180,255,0.14) 0%, transparent 65%)",
         }}
       />
+
+      <Hero3D />
 
       <motion.div
         className="relative z-10 flex flex-col items-center text-center max-w-4xl"
@@ -46,9 +56,28 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
       >
+        {/* Logo */}
+        <motion.div
+          variants={itemVariants}
+          className="relative mb-8"
+        >
+          <div
+            aria-hidden="true"
+            className="absolute -inset-6 rounded-full bg-[radial-gradient(circle,rgba(0,212,255,0.28)_0%,transparent_70%)] blur-xl"
+          />
+          <Image
+            src="/images/fph-logo.webp"
+            alt="Logo FPH Solutions"
+            width={180}
+            height={180}
+            priority
+            className="relative h-36 w-36 sm:h-44 sm:w-44 rounded-2xl object-cover ring-1 ring-cyan-400/40 shadow-[0_0_50px_rgba(0,212,255,0.35)]"
+          />
+        </motion.div>
+
         {/* Title */}
         <motion.h1
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground"
+          className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter text-foreground"
           variants={itemVariants}
         >
           FPH Solutions
@@ -56,13 +85,13 @@ export default function Hero() {
 
         {/* Accent underline */}
         <motion.div
-          className="mt-4 h-1 w-24 rounded-full bg-[#a855f7]"
+          className="mt-4 h-1 w-24 rounded-full bg-gradient-to-r from-[#00d4ff] to-[#0088ff]"
           variants={itemVariants}
         />
 
         {/* Subtitle */}
         <motion.p
-          className="mt-8 max-w-2xl text-lg sm:text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 leading-relaxed"
+          className="mt-6 max-w-2xl text-lg sm:text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 leading-relaxed"
           variants={itemVariants}
         >
           Solutions logicielles sur mesure
@@ -70,18 +99,18 @@ export default function Hero() {
 
         {/* CTA Buttons */}
         <motion.div
-          className="mt-12 flex flex-col sm:flex-row items-center gap-4"
+          className="mt-10 flex flex-col sm:flex-row items-center gap-4"
           variants={itemVariants}
         >
           <a
             href="#projects"
-            className="inline-flex h-12 items-center justify-center rounded-full bg-[#a855f7] px-8 text-sm font-medium text-white transition-all hover:bg-[#9333ea] hover:shadow-lg hover:shadow-[#a855f7]/25 active:scale-95"
+            className="inline-flex h-12 items-center justify-center rounded-full bg-[#00d4ff] px-8 text-sm font-semibold text-[#06101f] shadow-[0_0_24px_rgba(0,212,255,0.35)] transition-all hover:bg-[#00b2ec] hover:shadow-[0_0_36px_rgba(0,212,255,0.5)] active:scale-95"
           >
             Voir mes projets
           </a>
           <a
             href="#contact"
-            className="inline-flex h-12 items-center justify-center rounded-full border border-zinc-300 dark:border-zinc-700 px-8 text-sm font-medium text-zinc-700 dark:text-zinc-300 transition-all hover:border-[#a855f7] hover:text-[#a855f7] hover:shadow-lg hover:shadow-[#a855f7]/10 active:scale-95"
+            className="inline-flex h-12 items-center justify-center rounded-full border border-zinc-300 dark:border-zinc-700 px-8 text-sm font-medium text-zinc-700 dark:text-zinc-300 transition-all hover:border-[#00d4ff] hover:text-[#00d4ff] hover:shadow-[0_0_20px_rgba(0,212,255,0.15)] active:scale-95"
           >
             Me contacter
           </a>
@@ -89,36 +118,19 @@ export default function Hero() {
 
         {/* Technology Badges */}
         <motion.div
-          className="mt-14 flex flex-wrap items-center justify-center gap-3"
+          className="mt-12 flex flex-wrap items-center justify-center gap-3"
           variants={itemVariants}
         >
           <span className="mr-1 text-sm text-zinc-500">Stack :</span>
           {technologies.map((tech) => (
             <span
               key={tech}
-              className="inline-flex items-center rounded-full border border-zinc-200 dark:border-zinc-800 bg-zinc-100/50 dark:bg-zinc-900/50 px-4 py-1.5 text-xs font-medium text-zinc-700 dark:text-zinc-300 backdrop-blur-sm transition-colors hover:border-[#a855f7]/40 hover:text-[#a855f7]"
+              className="inline-flex items-center rounded-full border border-zinc-200 dark:border-cyan-400/20 dark:bg-cyan-400/[0.06] bg-zinc-100/50 px-4 py-1.5 text-xs font-medium text-zinc-700 dark:text-zinc-300 backdrop-blur-sm transition-colors hover:border-[#00d4ff]/40 hover:text-[#00d4ff]"
             >
               {tech}
             </span>
           ))}
         </motion.div>
-      </motion.div>
-
-      {/* Bottom scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.8, duration: 0.6 }}
-      >
-        <div className="flex flex-col items-center gap-2 text-zinc-600">
-          <span className="text-xs tracking-widest uppercase">Scroll</span>
-          <motion.div
-            className="h-6 w-[1px] bg-zinc-700"
-            animate={{ scaleY: [1, 1.8, 1] }}
-            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-          />
-        </div>
       </motion.div>
     </section>
   );

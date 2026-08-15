@@ -5,24 +5,38 @@
 @theme {
   --color-background: var(--color-background);
   --color-foreground: var(--color-foreground);
-  --color-accent: #a855f7;
+  --color-accent: #00d4ff;
+  --color-accent-strong: #0088ff;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Neutral scale teinté bleu nuit (cohérent avec le logo FPH circuit board) */
+  --color-zinc-50: #f2f7fc;
+  --color-zinc-100: #e6eef7;
+  --color-zinc-200: #d5e1ee;
+  --color-zinc-300: #b6c6d9;
+  --color-zinc-400: #8fa3bd;
+  --color-zinc-500: #64799a;
+  --color-zinc-600: #46597a;
+  --color-zinc-700: #2c3d5c;
+  --color-zinc-800: #1a2b46;
+  --color-zinc-900: #101f38;
+  --color-zinc-950: #081120;
 }
 
 :root {
-  --color-background: #fafafa;
-  --color-foreground: #0a0a0a;
+  --color-background: #f2f7fc;
+  --color-foreground: #0a1628;
 }
 
 .dark {
-  --color-background: #0a0a0a;
-  --color-foreground: #fafafa;
+  --color-background: #081120;
+  --color-foreground: #e8f1fb;
 }
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: #27272a transparent;
+  scrollbar-color: #1a2b46 transparent;
 }
 
 html {
@@ -39,7 +53,7 @@ body {
 }
 
 ::selection {
-  background: rgba(168, 85, 247, 0.3);
+  background: rgba(0, 212, 255, 0.3);
   color: inherit;
 }
 
@@ -73,11 +87,11 @@ body {
 }
 
 .blog-prose blockquote {
-  @apply border-l-4 border-violet-500 pl-4 italic text-zinc-600 dark:text-zinc-400 my-6;
+  @apply border-l-4 border-cyan-500 pl-4 italic text-zinc-600 dark:text-zinc-400 my-6;
 }
 
 .blog-prose a {
-  @apply text-violet-500 underline hover:text-violet-400;
+  @apply text-cyan-600 underline hover:text-cyan-500 dark:text-cyan-400 dark:hover:text-cyan-300;
 }
 
 .blog-prose code {
@@ -87,4 +101,3 @@ body {
 .blog-prose hr {
   @apply my-8 border-zinc-200 dark:border-zinc-800;
 }
-

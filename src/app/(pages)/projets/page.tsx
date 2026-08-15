@@ -22,7 +22,7 @@ export default function ProjectsPage() {
       {/* Header */}
       <section className="border-b border-zinc-200 dark:border-zinc-800">
         <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
-          <p className="mb-3 text-sm font-medium uppercase tracking-widest text-violet-400">
+          <p className="mb-3 text-sm font-medium uppercase tracking-widest text-cyan-400">
             Portfolio
           </p>
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
@@ -38,12 +38,12 @@ export default function ProjectsPage() {
 
       {/* Grid */}
       <section className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="flex flex-wrap justify-center gap-6">
           {projects.map((project) => (
             <Link
               key={project.slug}
               href={`/projets/${project.slug}`}
-              className="group relative flex flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white/50 transition hover:border-violet-600/50 hover:bg-zinc-100/50 dark:border-zinc-800 dark:bg-zinc-900/50 dark:hover:bg-zinc-900"
+              className="group relative flex w-full flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white/50 transition hover:border-cyan-500/50 hover:bg-zinc-100/50 dark:border-zinc-800 dark:bg-zinc-900/50 dark:hover:bg-zinc-900 sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
             >
               {/* Screenshot réel */}
               {project.image && (
@@ -67,7 +67,7 @@ export default function ProjectsPage() {
 
                 {/* Year + title */}
                 <span className="mb-1 text-xs text-zinc-500 dark:text-zinc-400">{project.year}</span>
-                <h3 className="text-xl font-semibold text-foreground transition group-hover:text-violet-400">
+                <h3 className="text-xl font-semibold text-foreground transition group-hover:text-cyan-400">
                   {project.title}
                 </h3>
                 <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">{project.subtitle}</p>
@@ -95,7 +95,7 @@ export default function ProjectsPage() {
                 </div>
 
                 {/* Arrow on hover */}
-                <div className="mt-6 flex items-center gap-2 text-sm font-medium text-violet-400 opacity-0 transition group-hover:opacity-100">
+                <div className="mt-6 flex items-center gap-2 text-sm font-medium text-cyan-400 opacity-0 transition group-hover:opacity-100">
                   Voir le projet
                   <svg
                     className="h-4 w-4 transition-transform group-hover:translate-x-0.5"

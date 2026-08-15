@@ -11,7 +11,7 @@ export default function CguPage() {
       <div className="mx-auto max-w-3xl px-6">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 transition hover:text-violet-400 mb-8"
+          className="inline-flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 transition hover:text-cyan-400 mb-8"
         >
           <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
@@ -54,8 +54,8 @@ export default function CguPage() {
             <h2 className="text-xl font-semibold text-foreground">5. Données personnelles</h2>
             <p>
               Les traitements de données personnelles réalisés dans le cadre de l&apos;utilisation du site (notamment le formulaire de contact) sont décrits dans notre{" "}
-              <Link href="/politique-de-confidentialite" className="text-[#a855f7] hover:underline">politique de confidentialité</Link>, et la gestion des traceurs dans notre{" "}
-              <Link href="/politique-de-cookies" className="text-[#a855f7] hover:underline">politique de cookies</Link>.
+              <Link href="/politique-de-confidentialite" className="text-[#00d4ff] hover:underline">politique de confidentialité</Link>, et la gestion des traceurs dans notre{" "}
+              <Link href="/politique-de-cookies" className="text-[#00d4ff] hover:underline">politique de cookies</Link>.
             </p>
           </section>
 
