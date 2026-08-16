@@ -1,6 +1,6 @@
 ---
 title: "J'ai développé 5 apps avec un agent IA — voici ce que ça m'a vraiment coûté"
-description: "Sans être développeur, j'ai livré 5 applications en production avec un agent IA. Budget réel : moins de 50 €/mois. Méthode, chiffres et pièges."
+description: "Sans être développeur, j'ai livré 5 applications en production avec un agent IA. Budget réel : environ 30 €/mois. Méthode, chiffres et pièges."
 date: "2026-08-16"
 slug: "5-apps-agent-ia-vrai-cout"
 tags: ["IA", "No-code", "Automatisation"]
@@ -37,12 +37,12 @@ Mon workflow aujourd'hui : je décompose, je délègue, je vérifie, je corrige,
 Le budget mensuel de mes cinq applications, tout compris :
 
 - **20 €/mois** — l'abonnement IA (Google AI Pro)
-- **31 $/mois en moyenne (≈ 28 €)** — les API de modèles de langage (moyenne sur 3 mois)
+- **~10 €/mois** — les API de modèles de langage
 - **0 €** — l'hébergement (offre gratuite)
 - **0 €** — la base de données (offre gratuite)
 - **~10 €/an** — le nom de domaine
 
-Ça fait **moins de 50 € par mois, tout compris, pour cinq applications en production**. Cinq. En production.
+Ça fait **environ 30 € par mois, tout compris, pour cinq applications en production**. Cinq. En production.
 
 > Le vrai coût de l'IA, ce n'est pas l'abonnement. C'est le temps que tu passes à vérifier ce qu'elle a fait.
 
@@ -54,7 +54,7 @@ Je n'ai pas fait de devis en agence. Mais les chiffres du marché, eux, sont pub
 - Un développeur senior React/Next.js : **650 à 800 €/jour**
 - Une application sur mesure en agence : **de 3 000 € pour le MVP le plus simple à plus de 150 000 €** pour un projet complexe — et **8 000 à 30 000 €** pour un besoin métier standard (Nocode Factory, 2026)
 
-Et ça, pour UNE app. Cinq apps développées par un prestataire ? On parle d'un budget à six chiffres. Moi : moins de 50 €/mois. La différence, ce n'est pas la qualité du code — c'est la **structure de coûts**.
+Et ça, pour UNE app. Cinq apps développées par un prestataire ? On parle d'un budget à six chiffres. Moi : environ 30 €/mois. La différence, ce n'est pas la qualité du code — c'est la **structure de coûts**.
 
 ## Ce qui marche... et ce qui casse
 
@@ -66,7 +66,7 @@ Ce qui casse : l'IA hallucine. Elle invente des fonctionnalités, des API qui n'
 
 L'IA ne va pas remplacer les développeurs. Elle va remplacer ceux qui n'apprennent pas à l'utiliser.
 
-Moi, je ne suis pas développeur. Et pourtant, j'ai cinq applications en production qui tournent, qui servent de vraies personnes, pour moins de 50 € par mois. Ça ne fait pas de moi un développeur. Ça fait de moi quelqu'un qui a compris que l'IA est un multiplicateur, pas un remplaçant.
+Moi, je ne suis pas développeur. Et pourtant, j'ai cinq applications en production qui tournent, qui servent de vraies personnes, pour environ 30 € par mois. Ça ne fait pas de moi un développeur. Ça fait de moi quelqu'un qui a compris que l'IA est un multiplicateur, pas un remplaçant.
 
 Si cet article t'a donné envie d'essayer, partage-le. Et si tu veux savoir comment j'ai fait : le prochain article te montrera mon workflow complet, étape par étape.
 
@@ -90,7 +90,7 @@ L'hallucination : des fonctionnalités inventées, des API qui n'existent pas, d
 
 ### Combien ça coûte, au total, pour se lancer ?
 
-20 €/mois pour l'outil IA principal, une trentaine d'euros d'API, 0 € d'hébergement au début. Moins de 50 €/mois pour cinq applications en production, c'est le budget réel de cet article.
+20 €/mois pour l'outil IA principal, environ 10 € d'API, 0 € d'hébergement au début. Environ 30 €/mois pour cinq applications en production, c'est le budget réel de cet article.
 
 ## Sources
 
