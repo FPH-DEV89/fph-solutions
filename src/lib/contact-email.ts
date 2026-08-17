@@ -10,6 +10,13 @@ export interface ContactEmailData {
   projectDescription: string;
 }
 
+export interface ConfirmationEmailData {
+  firstName: string;
+  projectTypeLabel: string;
+  budgetLabel: string;
+  deadlineLabel: string;
+}
+
 function escapeHtml(str: string): string {
   return str
     .replace(/&/g, "&amp;")
@@ -178,6 +185,103 @@ ${data.projectDescription}
 ---
 FPH Solutions — contact@fph-solutions.com
 Réserver un appel : https://cal.com/fph-solutions.com/15min`;
+
+  return { html, text };
+}
+
+export function buildConfirmationEmail(data: ConfirmationEmailData): { html: string; text: string } {
+  const escapedFirstName = escapeHtml(data.firstName);
+  const escapedProjectTypeLabel = escapeHtml(data.projectTypeLabel);
+  const escapedBudgetLabel = escapeHtml(data.budgetLabel);
+  const escapedDeadlineLabel = escapeHtml(data.deadlineLabel);
+
+  const html = `<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmation de votre demande — FPH Solutions</title>
+</head>
+<body style="margin:0;padding:0;background:#f4f6f8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f4f6f8;padding:24px 12px;margin:0;width:100%;">
+    <tr>
+      <td align="center" style="padding:0;margin:0;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;width:100%;background:#ffffff;border-radius:14px;overflow:hidden;border-collapse:separate;">
+          <!-- Header -->
+          <tr>
+            <td align="center" style="background:#081120;background:linear-gradient(135deg,#081120 0%,#0d2b4a 55%,#0a4a6e 100%);padding:28px;text-align:center;">
+              <div>
+                <span style="font-size:20px;font-weight:800;letter-spacing:0.5px;color:#ffffff;">FPH <span style="color:#00d4ff;">Solutions</span></span>
+              </div>
+              <div style="font-size:12px;color:#8fb3d9;margin-top:4px;letter-spacing:2px;text-transform:uppercase;">Confirmation de demande</div>
+              <div style="margin-top:16px;">
+                <div style="display:inline-block;background:#00d4ff;color:#06101f;font-size:12px;font-weight:700;padding:6px 16px;border-radius:999px;">Demande bien reçue ✅</div>
+              </div>
+            </td>
+          </tr>
+          <!-- Corps -->
+          <tr>
+            <td style="background:#ffffff;padding:8px 32px 32px;">
+              <h1 style="font-size:22px;color:#1a2733;margin:24px 0 8px;font-weight:700;">Merci ${escapedFirstName} !</h1>
+              <p style="font-size:14px;color:#334155;line-height:1.7;margin:0 0 20px;">J'ai bien reçu votre demande et je vous réponds sous 24h ouvrées.</p>
+              <div style="background:#f7fafc;border-left:4px solid #00d4ff;border-radius:8px;padding:14px 16px;margin:20px 0;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                  <tr>
+                    <td width="130" style="font-size:12px;color:#8899aa;text-transform:uppercase;letter-spacing:1px;padding:6px 0;vertical-align:top;">Type de projet</td>
+                    <td style="font-size:14px;color:#1a2733;font-weight:600;padding:6px 0;">${escapedProjectTypeLabel}</td>
+                  </tr>
+                  <tr>
+                    <td width="130" style="font-size:12px;color:#8899aa;text-transform:uppercase;letter-spacing:1px;padding:6px 0;vertical-align:top;">Budget estimé</td>
+                    <td style="font-size:14px;color:#1a2733;font-weight:600;padding:6px 0;">${escapedBudgetLabel}</td>
+                  </tr>
+                  <tr>
+                    <td width="130" style="font-size:12px;color:#8899aa;text-transform:uppercase;letter-spacing:1px;padding:6px 0;vertical-align:top;">Délai souhaité</td>
+                    <td style="font-size:14px;color:#1a2733;font-weight:600;padding:6px 0;">${escapedDeadlineLabel}</td>
+                  </tr>
+                </table>
+              </div>
+              <p style="font-size:14px;color:#334155;line-height:1.7;margin:20px 0 24px;">En attendant, vous pouvez d'ores et déjà planifier un appel découverte de 15 minutes pour qu'on fasse connaissance.</p>
+              <div style="text-align:center;margin:28px 0 16px;">
+                <a href="https://cal.com/fph-solutions.com/15min" style="display:inline-block;background:#00d4ff;color:#06101f;font-size:14px;font-weight:700;padding:12px 24px;border-radius:999px;text-decoration:none;">Réserver un appel découverte (15 min)</a>
+              </div>
+            </td>
+          </tr>
+          <!-- Footer -->
+          <tr>
+            <td style="background:#f7fafc;padding:20px 32px;border-top:1px solid #eef2f6;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f7fafc;">
+                <tr>
+                  <td>
+                    <div style="font-size:13px;color:#1a2733;font-weight:700;">FPH Solutions</div>
+                    <div style="font-size:12px;color:#8899aa;margin-top:2px;">contact@fph-solutions.com · <a href="https://cal.com/fph-solutions.com/15min" style="color:#0088ff;text-decoration:none;">Réserver un appel</a></div>
+                    <div style="font-size:11px;color:#aab8c5;margin-top:10px;">Réponse garantie sous 24h ouvrées.</div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`;
+
+  const text = `Merci ${data.firstName} !
+
+J'ai bien reçu votre demande et je vous réponds sous 24h ouvrées.
+
+RÉCAPITULATIF DE VOTRE DEMANDE
+- Type de projet : ${data.projectTypeLabel}
+- Budget estimé : ${data.budgetLabel}
+- Délai souhaité : ${data.deadlineLabel}
+
+En attendant, vous pouvez d'ores et déjà planifier un appel découverte de 15 minutes pour qu'on fasse connaissance :
+https://cal.com/fph-solutions.com/15min
+
+---
+FPH Solutions — contact@fph-solutions.com
+Réponse garantie sous 24h ouvrées.`;
 
   return { html, text };
 }

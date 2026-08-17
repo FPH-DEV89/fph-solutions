@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
-import { buildContactEmail } from "@/lib/contact-email";
+import { buildContactEmail, buildConfirmationEmail } from "@/lib/contact-email";
+import { createLeadPage } from "@/lib/notion-leads";
+import { sendTelegramAlert } from "@/lib/telegram-notify";
 
 // Rate limiting simple en mémoire : 5 envois / 10 min / IP
 const rateLimit = new Map<string, number[]>();
@@ -163,6 +165,54 @@ export async function POST(request: Request) {
         { status: 400 }
       );
     }
+
+    // ─── Actions post-réception : indépendantes et fail-open ───
+    // 1. Email de confirmation au visiteur
+    try {
+      if (apiKey) {
+        const { html: confirmHtml, text: confirmText } = buildConfirmationEmail({
+          firstName,
+          projectTypeLabel,
+          budgetLabel,
+          deadlineLabel,
+        });
+        await resend.emails.send({
+          from: "FPH Solutions <contact@fph-solutions.com>",
+          to: email,
+          subject: `Merci ${firstName}, j'ai bien reçu votre demande — FPH Solutions`,
+          html: confirmHtml,
+          text: confirmText,
+        });
+      }
+    } catch (err) {
+      console.error("Confirmation email failed:", err);
+    }
+
+    // 2. Page Notion
+    await createLeadPage({
+      firstName,
+      lastName,
+      email,
+      type,
+      organization: organization || undefined,
+      projectType,
+      budget,
+      deadline,
+      projectDescription,
+    });
+
+    // 3. Notification Telegram
+    await sendTelegramAlert({
+      firstName,
+      lastName,
+      email,
+      typeLabel,
+      organization: organization || undefined,
+      projectTypeLabel,
+      budgetLabel,
+      deadlineLabel,
+      projectDescription,
+    });
 
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (err: unknown) {
