@@ -15,6 +15,36 @@ function isRateLimited(ip: string): boolean {
   return false;
 }
 
+const TYPE_LABELS: Record<string, string> = {
+  particulier: "Particulier",
+  entreprise: "Entreprise",
+  association: "Association",
+};
+
+const PROJECT_TYPE_LABELS: Record<string, string> = {
+  "site-vitrine": "Site vitrine",
+  ecommerce: "E-commerce / boutique en ligne",
+  application: "Application web / sur mesure",
+  refonte: "Refonte de site existant",
+  automatisation: "Automatisation / outils internes",
+  autre: "Autre",
+};
+
+const BUDGET_LABELS: Record<string, string> = {
+  unknown: "Je ne sais pas encore",
+  "moins-500": "Moins de 500 €",
+  "500-1500": "500 € – 1 500 €",
+  "1500-5000": "1 500 € – 5 000 €",
+  "plus-5000": "Plus de 5 000 €",
+};
+
+const DEADLINE_LABELS: Record<string, string> = {
+  flexible: "Flexible / pas d'urgence",
+  urgent: "Urgent (moins d'un mois)",
+  "1-3-mois": "1 à 3 mois",
+  "3-6-mois": "3 à 6 mois",
+};
+
 export async function POST(request: Request) {
   try {
     const formData = await request.formData();
@@ -36,13 +66,33 @@ export async function POST(request: Request) {
       );
     }
 
-    const name = formData.get("name") as string;
-    const email = formData.get("email") as string;
-    const message = formData.get("message") as string;
+    const firstName = ((formData.get("firstName") as string) ?? "").trim();
+    const lastName = ((formData.get("lastName") as string) ?? "").trim();
+    const email = ((formData.get("email") as string) ?? "").trim();
+    const type = ((formData.get("type") as string) ?? "").trim();
+    const organization = ((formData.get("organization") as string) ?? "").trim();
+    const projectType = ((formData.get("projectType") as string) ?? "").trim();
+    const projectDescription = ((formData.get("projectDescription") as string) ?? "").trim();
+    const budget = ((formData.get("budget") as string) ?? "").trim() || "unknown";
+    const deadline = ((formData.get("deadline") as string) ?? "").trim() || "flexible";
 
-    if (!name || !email || !message) {
+    if (!firstName || !lastName || !email || !type || !projectType || !projectDescription) {
       return NextResponse.json(
-        { errors: [{ message: "Tous les champs sont obligatoires." }] },
+        { errors: [{ message: "Tous les champs obligatoires doivent être remplis." }] },
+        { status: 400 }
+      );
+    }
+
+    if (!["particulier", "entreprise", "association"].includes(type)) {
+      return NextResponse.json(
+        { errors: [{ message: "Le type de demandeur est invalide." }] },
+        { status: 400 }
+      );
+    }
+
+    if (type !== "particulier" && !organization) {
+      return NextResponse.json(
+        { errors: [{ message: "Merci d'indiquer le nom de votre structure." }] },
         { status: 400 }
       );
     }
@@ -56,10 +106,47 @@ export async function POST(request: Request) {
       );
     }
 
+    const typeLabel = TYPE_LABELS[type] ?? type;
+    const projectTypeLabel = PROJECT_TYPE_LABELS[projectType] ?? projectType;
+    const budgetLabel = BUDGET_LABELS[budget] ?? budget;
+    const deadlineLabel = DEADLINE_LABELS[deadline] ?? deadline;
+
+    const contactLines = [
+      "CONTACT",
+      `Prénom: ${firstName}`,
+      `Nom: ${lastName}`,
+      `Email: ${email}`,
+      `Profil: ${typeLabel}`,
+    ];
+
+    if (type !== "particulier" && organization) {
+      contactLines.push(`Structure: ${organization}`);
+    }
+
+    const emailBody = `${contactLines.join("\n")}
+
+PROJET
+Type de projet: ${projectTypeLabel}
+Budget estimé: ${budgetLabel}
+Délai souhaité: ${deadlineLabel}
+
+Description du projet:
+${projectDescription}`;
+
     const apiKey = process.env.RESEND_API_KEY;
 
     if (!apiKey) {
-      console.warn("RESEND_API_KEY is not defined. Email content:", { name, email, message });
+      console.warn("RESEND_API_KEY is not defined. Email content:", {
+        firstName,
+        lastName,
+        email,
+        type,
+        organization,
+        projectType,
+        projectDescription,
+        budget,
+        deadline,
+      });
       return NextResponse.json(
         {
           message: "Formulaire soumis (mode simulation, clé API manquante).",
@@ -74,8 +161,8 @@ export async function POST(request: Request) {
       from: "FPH Solutions <contact@fph-solutions.com>",
       to: "contact@fph-solutions.com",
       replyTo: email,
-      subject: `Nouveau message de ${name} via FPH Solutions`,
-      text: `Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+      subject: `Nouvelle demande de ${firstName} ${lastName} (${typeLabel}) via FPH Solutions`,
+      text: emailBody,
     });
 
     if (error) {
