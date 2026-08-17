@@ -40,7 +40,9 @@ export async function sendTelegramAlert(lead: TelegramLeadData): Promise<boolean
     const escapedDeadlineLabel = escapeTelegram(lead.deadlineLabel);
     const escapedProjectDescription = escapeTelegram(lead.projectDescription);
 
-    const text = `🚀 <b>Nouvelle demande — fph-solutions.com</b>
+    const text = `👋 <b>Bonjour Florian,</b>
+
+Une nouvelle demande vient d'arriver sur fph-solutions.com 👇
 
 👤 <b>${escapedFirstName} ${escapedLastName}</b> (${escapedTypeLabel})
 📧 ${escapedEmail}
@@ -49,7 +51,11 @@ export async function sendTelegramAlert(lead: TelegramLeadData): Promise<boolean
 💰 ${escapedBudgetLabel}
 ⏱️ ${escapedDeadlineLabel}
 
-💬 ${escapedProjectDescription}`;
+💬 ${escapedProjectDescription}
+
+Merci de la traiter dès que possible.
+
+L'équipe FPH Solutions vous souhaite une bonne journée ☀️`;
 
     const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
       method: "POST",

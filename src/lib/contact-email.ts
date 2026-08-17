@@ -84,6 +84,8 @@ export function buildContactEmail(data: ContactEmailData): { html: string; text:
           <!-- Corps -->
           <tr>
             <td style="background:#ffffff;padding:8px 32px 32px;">
+              <p style="font-size:15px;color:#1a2733;line-height:1.7;margin:20px 0 4px;font-weight:700;">Bonjour Florian, 👋</p>
+              <p style="font-size:14px;color:#334155;line-height:1.7;margin:0 0 8px;">Une nouvelle demande de contact vient d'arriver sur le site — voici le détail :</p>
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff;">
                 <!-- Bloc CONTACT -->
                 <tr>
@@ -134,6 +136,8 @@ export function buildContactEmail(data: ContactEmailData): { html: string; text:
                   </td>
                 </tr>
               </table>
+              <p style="font-size:14px;color:#334155;line-height:1.7;margin:24px 0 0;">Merci de la traiter dès que possible.</p>
+              <p style="font-size:14px;color:#1a2733;line-height:1.7;margin:16px 0 0;">Cordialement,<br><span style="font-weight:700;">L'équipe FPH Solutions</span> — vous souhaite une bonne journée ☀️</p>
             </td>
           </tr>
           <!-- Footer -->
@@ -169,8 +173,9 @@ export function buildContactEmail(data: ContactEmailData): { html: string; text:
     contactTextLines.push(`Structure: ${data.organization.trim()}`);
   }
 
-  const text = `NOUVELLE DEMANDE DE CONTACT — FPH Solutions
-============================================
+  const text = `Bonjour Florian,
+
+Une nouvelle demande de contact vient d'arriver sur le site — voici le détail :
 
 ${contactTextLines.join("\n")}
 
@@ -182,8 +187,10 @@ Délai souhaité: ${data.deadlineLabel}
 Description du projet:
 ${data.projectDescription}
 
----
-FPH Solutions — contact@fph-solutions.com
+Merci de la traiter dès que possible.
+
+Cordialement,
+L'équipe FPH Solutions — contact@fph-solutions.com
 Réserver un appel : https://cal.com/fph-solutions.com/15min`;
 
   return { html, text };
@@ -244,6 +251,8 @@ export function buildConfirmationEmail(data: ConfirmationEmailData): { html: str
               <div style="text-align:center;margin:28px 0 16px;">
                 <a href="https://cal.com/fph-solutions.com/15min" style="display:inline-block;background:#00d4ff;color:#06101f;font-size:14px;font-weight:700;padding:12px 24px;border-radius:999px;text-decoration:none;">Réserver un appel découverte (15 min)</a>
               </div>
+              <p style="font-size:14px;color:#334155;line-height:1.7;margin:20px 0 0;">Merci pour votre confiance, et à très vite !</p>
+              <p style="font-size:14px;color:#1a2733;line-height:1.7;margin:16px 0 0;">Cordialement,<br><span style="font-weight:700;">L'équipe FPH Solutions</span> — vous souhaite une bonne journée ☀️</p>
             </td>
           </tr>
           <!-- Footer -->
@@ -279,8 +288,10 @@ RÉCAPITULATIF DE VOTRE DEMANDE
 En attendant, vous pouvez d'ores et déjà planifier un appel découverte de 15 minutes pour qu'on fasse connaissance :
 https://cal.com/fph-solutions.com/15min
 
----
-FPH Solutions — contact@fph-solutions.com
+Merci pour votre confiance, et à très vite !
+
+Cordialement,
+L'équipe FPH Solutions — contact@fph-solutions.com
 Réponse garantie sous 24h ouvrées.`;
 
   return { html, text };
