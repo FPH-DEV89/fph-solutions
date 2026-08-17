@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { buildContactEmail } from "@/lib/contact-email";
 
 // Rate limiting simple en mémoire : 5 envois / 10 min / IP
 const rateLimit = new Map<string, number[]>();
@@ -111,27 +112,17 @@ export async function POST(request: Request) {
     const budgetLabel = BUDGET_LABELS[budget] ?? budget;
     const deadlineLabel = DEADLINE_LABELS[deadline] ?? deadline;
 
-    const contactLines = [
-      "CONTACT",
-      `Prénom: ${firstName}`,
-      `Nom: ${lastName}`,
-      `Email: ${email}`,
-      `Profil: ${typeLabel}`,
-    ];
-
-    if (type !== "particulier" && organization) {
-      contactLines.push(`Structure: ${organization}`);
-    }
-
-    const emailBody = `${contactLines.join("\n")}
-
-PROJET
-Type de projet: ${projectTypeLabel}
-Budget estimé: ${budgetLabel}
-Délai souhaité: ${deadlineLabel}
-
-Description du projet:
-${projectDescription}`;
+    const { html, text } = buildContactEmail({
+      firstName,
+      lastName,
+      email,
+      typeLabel,
+      organization: type !== "particulier" ? organization : undefined,
+      projectTypeLabel,
+      budgetLabel,
+      deadlineLabel,
+      projectDescription,
+    });
 
     const apiKey = process.env.RESEND_API_KEY;
 
@@ -162,7 +153,8 @@ ${projectDescription}`;
       to: "contact@fph-solutions.com",
       replyTo: email,
       subject: `Nouvelle demande de ${firstName} ${lastName} (${typeLabel}) via FPH Solutions`,
-      text: emailBody,
+      text,
+      html,
     });
 
     if (error) {
