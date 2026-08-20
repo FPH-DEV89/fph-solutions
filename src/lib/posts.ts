@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import matter from "gray-matter";
+import DOMPurify from "isomorphic-dompurify";
 import { marked } from "marked";
 import { cache } from "react";
 
@@ -114,7 +115,8 @@ export const getPosts = cache(async (): Promise<Post[]> => {
         const title = String(data.title || "");
         const description = String(data.description || "");
         const tags = Array.isArray(data.tags) ? data.tags.map(String) : [];
-        const contentHtml = marked.parse(content) as string;
+        // XSS guard (semgrep gate 20/08/2026)
+        const contentHtml = DOMPurify.sanitize(marked.parse(content) as string);
 
         posts.push({
           slug,
