@@ -73,7 +73,9 @@ L'équipe FPH Solutions vous souhaite une bonne journée ☀️`;
     if (!response.ok) {
       const errorText = await response.text();
       console.error(
-        `Telegram API error: ${response.status} ${response.statusText}`,
+        "Telegram API error:",
+        response.status,
+        response.statusText,
         errorText.slice(0, 500)
       );
       return false;

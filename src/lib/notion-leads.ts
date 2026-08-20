@@ -159,7 +159,9 @@ export async function createLeadPage(lead: LeadData): Promise<boolean> {
     if (!response.ok) {
       const errorText = await response.text();
       console.error(
-        `Notion API error: ${response.status} ${response.statusText}`,
+        "Notion API error:",
+        response.status,
+        response.statusText,
         errorText.slice(0, 500)
       );
       return false;

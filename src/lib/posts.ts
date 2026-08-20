@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import matter from "gray-matter";
-import DOMPurify from "isomorphic-dompurify";
+import sanitizeHtml from "sanitize-html";
 import { marked } from "marked";
 import { cache } from "react";
 
@@ -116,7 +116,16 @@ export const getPosts = cache(async (): Promise<Post[]> => {
         const description = String(data.description || "");
         const tags = Array.isArray(data.tags) ? data.tags.map(String) : [];
         // XSS guard (semgrep gate 20/08/2026)
-        const contentHtml = DOMPurify.sanitize(marked.parse(content) as string);
+        const contentHtml = sanitizeHtml(marked.parse(content) as string, {
+          allowedTags: ["h1","h2","h3","h4","h5","h6","p","a","ul","ol","li","code","pre","blockquote","img","strong","em","hr","br","table","thead","tbody","tr","th","td","del","sup","sub","span"],
+          allowedAttributes: {
+            a: ["href","title","rel"],
+            img: ["src","alt","title"],
+            code: ["class"],
+            span: ["class"],
+          },
+          allowedSchemes: ["http","https","mailto","tel"],
+        });
 
         posts.push({
           slug,
@@ -131,7 +140,7 @@ export const getPosts = cache(async (): Promise<Post[]> => {
       } catch (err) {
         // Un article illisible ne doit pas faire tomber tout le blog :
         // on logge le fichier fautif et on continue avec les autres.
-        console.error(`[blog] Article illisible: ${file.name}`, err);
+        console.error("[blog] Article illisible:", file.name, err);
         continue;
       }
     }
