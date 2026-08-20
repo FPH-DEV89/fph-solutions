@@ -45,7 +45,7 @@ export default function ProjectCard({ project, className = '' }: { project: Proj
           </div>
         )}
         {/* Hover overlay */}
-        <Link href={`/projets/${slug}`} className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100">
+        <Link href={`/projets/${slug}`} className="absolute inset-0 z-10 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100">
           <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-zinc-900 backdrop-blur-sm dark:bg-zinc-900/90 dark:text-zinc-100">
             Voir le projet
           </span>

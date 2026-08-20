@@ -87,7 +87,6 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
 
   // Drag & swipe avec inertie (framer-motion)
   const dragOffset = useMotionValue(0)
-  const dragSpring = useSpring(dragOffset, { stiffness: 200, damping: 28, mass: 0.6 })
 
   // Tilt 3D au survol de la carte active (parallax)
   const tiltX = useMotionValue(0)
@@ -178,6 +177,10 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
   const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     if (prefersReducedMotion || count <= 1) return
     if (e.button !== 0) return
+    const target = e.target as HTMLElement | null
+    if (target?.closest('a') || target?.closest('button')) {
+      return
+    }
     startXRef.current = e.clientX
     lastXRef.current = e.clientX
     lastTimeRef.current = performance.now()

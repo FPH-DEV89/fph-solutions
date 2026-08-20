@@ -42,7 +42,10 @@ export default function LiquidGlassLens({ targetRef, onActive }: LiquidGlassLens
         let prevY = el.getBoundingClientRect().y;
         let stableFrames = 0;
         let animId: number;
-        let timeoutId: ReturnType<typeof setTimeout>;
+
+        const timeoutId = setTimeout(() => {
+          done(el.getBoundingClientRect());
+        }, 2000);
 
         const done = (rect: DOMRect) => {
           cancelAnimationFrame(animId);
@@ -68,10 +71,6 @@ export default function LiquidGlassLens({ targetRef, onActive }: LiquidGlassLens
           prevY = r.y;
           animId = requestAnimationFrame(check);
         };
-
-        timeoutId = setTimeout(() => {
-          done(el.getBoundingClientRect());
-        }, 2000);
 
         animId = requestAnimationFrame(check);
       });
