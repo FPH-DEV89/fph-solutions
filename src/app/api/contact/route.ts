@@ -48,6 +48,60 @@ const DEADLINE_LABELS: Record<string, string> = {
   "3-6-mois": "3 à 6 mois",
 };
 
+const SUSPICIOUS_DOMAINS = [
+  "share.google",
+  "bit.ly",
+  "tinyurl.com",
+  "is.gd",
+  "goo.gl",
+  "rebrand.ly",
+  "cutt.ly",
+  "t.me",
+  "wa.me",
+];
+
+const DISPOSABLE_EMAIL_DOMAINS = [
+  "@mailinator.com",
+  "@yopmail.com",
+  "@tempmail.com",
+  "@guerrillamail.com",
+  "@10minutemail.com",
+  "@mail.ru",
+  "@yandex.ru",
+  "@rambler.ru",
+  "@bk.ru",
+  "@list.ru",
+  "@inbox.ru",
+];
+
+function isSpam(input: {
+  firstName: string;
+  lastName: string;
+  email: string;
+  organization: string;
+  projectDescription: string;
+}): boolean {
+  // 1. Détection de caractères cyrilliques dans les champs texte
+  const combinedText = `${input.firstName} ${input.lastName} ${input.organization} ${input.projectDescription}`.toLowerCase();
+  if (/[\u0400-\u04FF]/.test(combinedText)) {
+    return true;
+  }
+
+  // 2. Détection de domaines / réducteurs d'URL suspects dans la description
+  const desc = input.projectDescription.toLowerCase();
+  if (SUSPICIOUS_DOMAINS.some((domain) => desc.includes(domain))) {
+    return true;
+  }
+
+  // 3. Détection de domaines d'emails jetables
+  const email = input.email.toLowerCase();
+  if (DISPOSABLE_EMAIL_DOMAINS.some((domain) => email.endsWith(domain))) {
+    return true;
+  }
+
+  return false;
+}
+
 export async function POST(request: Request) {
   try {
     const formData = await request.formData();
@@ -78,6 +132,10 @@ export async function POST(request: Request) {
     const projectDescription = ((formData.get("projectDescription") as string) ?? "").trim();
     const budget = ((formData.get("budget") as string) ?? "").trim() || "unknown";
     const deadline = ((formData.get("deadline") as string) ?? "").trim() || "flexible";
+
+    if (isSpam({ firstName, lastName, email, organization, projectDescription })) {
+      return NextResponse.json({ success: true }, { status: 200 });
+    }
 
     if (!firstName || !lastName || !email || !type || !projectType || !projectDescription) {
       return NextResponse.json(
