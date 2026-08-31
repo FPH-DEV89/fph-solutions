@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Script from "next/script"
 import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
 import Header from "@/components/Header"
@@ -134,6 +135,7 @@ export default function RootLayout({
         <Footer />
         <CookieBanner />
         <AnalyticsWithConsent />
+        <Script src="https://stats.fph-solutions.com/script.js" data-website-id="e4e3583d-b26d-4827-be20-71e01ff03f12" strategy="afterInteractive" />
       </body>
     </html>
   )
