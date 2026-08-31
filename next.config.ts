@@ -2,7 +2,8 @@ import type { NextConfig } from "next";
 
 const cspHeader = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline';
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' https://stats.fph-solutions.com;
+  connect-src 'self' https://stats.fph-solutions.com https://vitals.vercel-analytics.com;
   style-src 'self' 'unsafe-inline';
   img-src 'self' data: https: blob:;
   font-src 'self' data:;
@@ -10,7 +11,6 @@ const cspHeader = `
   base-uri 'self';
   form-action 'self';
   frame-ancestors 'none';
-  connect-src 'self' https://vitals.vercel-analytics.com;
   upgrade-insecure-requests;
 `.replace(/\s{2,}/g, ' ').trim();
 
