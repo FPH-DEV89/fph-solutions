@@ -1,10 +1,11 @@
 ---
-title: "Tailwind Labs is joining Shopify"
+title: "Tailwind Labs rejoint Shopify : ce que ça change pour mes 5 applications"
 description: "Tailwind Labs rejoint Shopify pour pérenniser son framework CSS open source. Analyse technique et impact sur nos applications par un indépendant à l'IA."
 date: "2026-09-10"
 slug: "tailwind-labs-is-joining-shopify"
 tags: ["Technologie", "IA", "Automatisation"]
 image: "/blog/tailwind-labs-is-joining-shopify.webp"
+source: "https://tailwindcss.com/blog/tailwind-is-joining-shopify"
 published: true
 ---
 

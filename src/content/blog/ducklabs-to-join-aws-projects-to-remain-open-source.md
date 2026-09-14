@@ -1,10 +1,11 @@
 ---
-title: "DuckLabs to Join AWS, Projects to Remain Open Source"
+title: "DuckDB racheté par AWS : pourquoi l'open source n'est pas perdu"
 description: "DuckLabs rejoint AWS tout en préservant la gouvernance open source de DuckDB. Analyse sans filtre d'un indépendant qui fait tourner son business à l'IA."
 date: "2026-08-27"
 slug: "ducklabs-to-join-aws-projects-to-remain-open-source"
 tags: ["Technologie", "IA", "Automatisation"]
 image: "/blog/ducklabs-to-join-aws-projects-to-remain-open-source.webp"
+source: "https://ducklabs.com/news/2026/08/26/ducklabs-to-join-aws"
 published: true
 ---
 

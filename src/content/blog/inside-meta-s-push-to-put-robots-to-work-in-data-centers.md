@@ -1,10 +1,11 @@
 ---
-title: "Inside Meta’s push to put robots to work in data centers"
+title: "Des robots réparent les centres de données de Meta : ce que ça m'apprend"
 description: "Meta teste des bras robotiques pour maintenir ses data centers IA. Analyse sans filtre d'un indépendant qui fait tourner tout son business grâce à l'IA."
 date: "2026-08-31"
 slug: "inside-meta-s-push-to-put-robots-to-work-in-data-centers"
 tags: ["Technologie", "IA", "Automatisation"]
 image: "/blog/inside-meta-s-push-to-put-robots-to-work-in-data-centers.webp"
+source: "https://arstechnica.com/ai/2026/08/inside-metas-push-to-put-robots-to-work-in-data-centers/"
 published: true
 ---
 

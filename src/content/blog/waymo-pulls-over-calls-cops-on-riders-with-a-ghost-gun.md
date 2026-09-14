@@ -1,10 +1,11 @@
 ---
-title: "Waymo pulls over, calls cops on riders with a ghost gun"
+title: "Un robotaxi appelle la police tout seul : jusqu'où laisser décider une IA ?"
 description: "Un robotaxi Waymo bloque des passagers armés et alerte la police. Analyse sans filtre d'un indépendant sur l'autonomie décisionnelle et les garde-fous IA."
 date: "2026-09-14"
 slug: "waymo-pulls-over-calls-cops-on-riders-with-a-ghost-gun"
 tags: ["Technologie", "IA", "Automatisation"]
 image: "/blog/waymo-pulls-over-calls-cops-on-riders-with-a-ghost-gun.webp"
+source: "https://www.theverge.com/transportation/994405/waymo-pulls-over-calls-cops-on-riders-with-a-ghost-gun"
 published: true
 ---
 
