@@ -5,6 +5,7 @@ import FAQSection from "@/components/FAQ"
 import ContactForm from "@/components/ContactForm"
 import AboutSection from "@/components/About"
 import SocialProofSection from "@/components/SocialProof"
+import MaintenanceSection from "@/components/MaintenanceSection"
 import Link from "next/link"
 import { projects, faqItems } from "@/data/projects"
 
@@ -68,6 +69,7 @@ export default function HomePage() {
       <SocialProofSection />
       <AboutSection />
       <ServicesSection />
+      <MaintenanceSection />
       <FAQSection />
       <ContactForm />
     </>

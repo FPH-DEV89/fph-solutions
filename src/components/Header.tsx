@@ -14,6 +14,7 @@ const NAV_LINKS = [
   { href: "/blog", label: "Blog" },
   { href: "/#about", label: "À propos" },
   { href: "/#services", label: "Services" },
+  { href: "/maintenance", label: "Maintenance" },
   { href: "/#faq", label: "FAQ" },
   { href: "/#contact", label: "Contact" },
 ] as const;
@@ -68,7 +69,7 @@ export default function Header() {
             <li key={href}>
               <Link
                 href={href}
-                className="relative rounded-lg px-3 py-2 text-sm font-medium text-foreground/70 transition-colors hover:text-foreground hover:bg-foreground/[0.06]"
+                className="relative rounded-lg px-2.5 py-2 text-sm font-medium text-foreground/70 transition-colors hover:text-foreground hover:bg-foreground/[0.06]"
               >
                 {label}
               </Link>
