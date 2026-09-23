@@ -1,8 +1,11 @@
 import Link from "next/link"
+import { SITE_URL } from "@/lib/site"
 
 export const metadata = {
   title: "Politique de Confidentialité",
   description: "Politique de protection des données personnelles de FPH Solutions, conforme au RGPD.",
+  alternates: { canonical: `${SITE_URL}/politique-de-confidentialite` },
+  openGraph: { url: `${SITE_URL}/politique-de-confidentialite` },
 }
 
 export default function PolitiqueConfidentialitePage() {
@@ -40,7 +43,7 @@ export default function PolitiqueConfidentialitePage() {
             </p>
             <ul className="list-disc pl-5 space-y-1">
               <li><strong>Via le formulaire de contact :</strong> votre nom, votre adresse email et le contenu de votre message (données que vous nous fournissez volontairement)&nbsp;;</li>
-              <li><strong>Données de navigation :</strong> adresse IP, type de navigateur, pages visitées, temps de chargement — collectées par notre hébergeur (Vercel) et notre CDN (Cloudflare) à des fins de sécurité et de bon fonctionnement, ainsi que par notre outil de mesure d&apos;audience exempté (Vercel Analytics, sans cookie, données agrégées — voir notre politique de cookies).</li>
+              <li><strong>Données de navigation :</strong> adresse IP, type de navigateur, pages visitées, temps de chargement — collectées par notre hébergeur (Vercel) et notre CDN (Cloudflare) à des fins de sécurité et de bon fonctionnement, ainsi que par nos outils de mesure d&apos;audience <strong>Umami Analytics</strong> (auto-hébergé) et <strong>Vercel Analytics</strong> — uniquement après votre consentement, données agrégées, sans finalité publicitaire (voir notre politique de cookies).</li>
             </ul>
             <p>Aucune donnée sensible (origine, opinions politiques, santé, etc.) n&apos;est collectée.</p>
           </section>
@@ -51,7 +54,7 @@ export default function PolitiqueConfidentialitePage() {
               <li><strong>Répondre à vos demandes de renseignements ou de devis</strong> — base légale&nbsp;: votre consentement (article 6-1-a) du RGPD), recueilli via la case à cocher du formulaire de contact&nbsp;;</li>
               <li><strong>Assurer le suivi de la relation commerciale</strong> si une collaboration en découle — base légale&nbsp;: exécution de mesures précontractuelles (article 6-1-b) du RGPD)&nbsp;;</li>
               <li><strong>Garantir la sécurité et le bon fonctionnement du site</strong> (logs techniques, protection contre les attaques) — base légale&nbsp;: intérêt légitime (article 6-1-f) du RGPD)&nbsp;;</li>
-              <li><strong>Mesurer l&apos;audience du site</strong> (Vercel Analytics, exempté de consentement, sans cookie) — base légale&nbsp;: intérêt légitime (article 6-1-f) du RGPD), conformément à la délibération CNIL n° 2020-091.</li>
+              <li><strong>Mesurer l&apos;audience du site</strong> (Umami Analytics et Vercel Analytics, chargés uniquement après votre accord, données agrégées) — base légale&nbsp;: consentement (article 6-1-a) du RGPD). Vous pouvez retirer ce consentement à tout moment via le bandeau de consentement.</li>
             </ul>
             <p>Aucune donnée n&apos;est cédée, vendue ou louée à des tiers à des fins commerciales.</p>
           </section>
@@ -86,7 +89,7 @@ export default function PolitiqueConfidentialitePage() {
               <li><strong>Messages envoyés via le formulaire de contact :</strong> conservés 3 ans après notre dernier échange si aucune relation contractuelle n&apos;est établie&nbsp;;</li>
               <li><strong>Données relatives à une relation contractuelle :</strong> conservées pendant la durée de la relation puis archivées selon les obligations légales applicables&nbsp;;</li>
               <li><strong>Logs techniques (Vercel, Cloudflare) :</strong> conservés 12 mois maximum&nbsp;;</li>
-              <li><strong>Données de mesure d&apos;audience (Vercel Analytics) :</strong> conservées 90 jours par Vercel&nbsp;;</li>
+              <li><strong>Données de mesure d&apos;audience (Umami Analytics / Vercel Analytics) :</strong> données agrégées, conservées au maximum 90 jours (Vercel Analytics) ; Umami Analytics est auto-hébergé et conserve les statistiques agrégées sans limite de durée légale contractuelle&nbsp;;</li>
               <li><strong>Preuve de consentement cookies :</strong> conservée 6 mois (recommandation CNIL).</li>
             </ul>
           </section>

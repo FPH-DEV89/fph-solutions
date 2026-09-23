@@ -1,3 +1,5 @@
+import type { Metadata } from "next"
+import { SITE_URL } from "@/lib/site"
 import Hero from "@/components/Hero"
 import ProjectCarousel from "@/components/ProjectCarousel"
 import ServicesSection from "@/components/Services"
@@ -8,6 +10,15 @@ import SocialProofSection from "@/components/SocialProof"
 import MaintenanceSection from "@/components/MaintenanceSection"
 import Link from "next/link"
 import { projects, faqItems } from "@/data/projects"
+
+export const metadata: Metadata = {
+  title: "FPH Solutions — Solutions logicielles sur mesure",
+  description:
+    "Applications web sur mesure avec Next.js, React et TypeScript. Solutions SAV, sites vitrine, automatisation et IA. Portfolio de Florian Philibert.",
+  alternates: { canonical: SITE_URL },
+  openGraph: { url: SITE_URL },
+}
+
 
 const featuredProjects = [
   ...projects.filter((p) => p.slug !== "cap-sur-valencia").slice(0, 5),

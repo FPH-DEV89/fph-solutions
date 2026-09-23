@@ -1,8 +1,11 @@
 import Link from "next/link"
+import { SITE_URL } from "@/lib/site"
 
 export const metadata = {
   title: "Politique de Cookies",
   description: "Politique de gestion des cookies et de la mesure d'audience du site FPH Solutions.",
+  alternates: { canonical: `${SITE_URL}/politique-de-cookies` },
+  openGraph: { url: `${SITE_URL}/politique-de-cookies` },
 }
 
 export default function PolitiqueCookiesPage() {
@@ -40,24 +43,26 @@ export default function PolitiqueCookiesPage() {
             <ul className="list-disc pl-5 space-y-1">
               <li><strong>Stockage local technique (localStorage)&nbsp;:</strong> mémorise votre préférence de thème (clair/sombre). Exempté de consentement car strictement nécessaire au fonctionnement du site (article 82 de la loi Informatique et Libertés, recommandation CNIL).</li>
               <li><strong>Préférence de consentement (localStorage)&nbsp;:</strong> mémorise votre choix concernant la mesure d&apos;audience. Conservée 6 mois maximum.</li>
-              <li><strong>Mesure d&apos;audience — Vercel Analytics&nbsp;:</strong> mesure d&apos;audience exemptée de consentement (voir section 3), activée uniquement après votre accord via le bandeau de consentement. Aucun cookie n&apos;est déposé par ce service.</li>
+              <li><strong>Mesure d&apos;audience — Umami Analytics&nbsp;:</strong> statistiques de visite auto-hébergées sur <code>stats.fph-solutions.com</code>. Données agrégées, sans finalité publicitaire. Chargé uniquement après votre accord via le bandeau de consentement.</li>
+              <li><strong>Mesure d&apos;audience — Vercel Analytics&nbsp;:</strong> mesure d&apos;audience fournie par Vercel. Données agrégées, sans cookie déposé sur votre appareil. Chargé uniquement après votre accord via le bandeau de consentement.</li>
             </ul>
+            <p>Les deux outils de mesure d&apos;audience (Umami Analytics et Vercel Analytics) ne sont activés qu&apos;après un clic sur «&nbsp;Accepter&nbsp;» dans le bandeau de consentement. Sans accord de votre part, aucune donnée de navigation n&apos;est collectée à des fins statistiques.</p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-semibold text-foreground">3. La mesure d&apos;audience exemptée de consentement</h2>
+            <h2 className="text-xl font-semibold text-foreground">3. Mesure d&apos;audience soumise à consentement</h2>
             <p>
-              La mesure d&apos;audience du site est assurée par Vercel Analytics. Ce dispositif est conforme aux conditions d&apos;exemption définies par la CNIL dans sa délibération n° 2020-091 du 17 septembre 2020&nbsp;:
+              La mesure d&apos;audience du site est assurée par deux outils, <strong>Umami Analytics</strong> et <strong>Vercel Analytics</strong>, tous deux chargés uniquement après votre accord explicite. Les données collectées respectent les conditions suivantes&nbsp;:
             </p>
             <ul className="list-disc pl-5 space-y-1">
-              <li>Aucun cookie déposé sur votre appareil&nbsp;;</li>
               <li>Finalité strictement limitée à la mesure d&apos;audience (nombre de visites, pages vues, performances techniques)&nbsp;;</li>
               <li>Aucun suivi inter-sites, aucun recoupement avec d&apos;autres traitements&nbsp;;</li>
               <li>Données agrégées, sans identifiant permanent permettant de vous réidentifier&nbsp;;</li>
-              <li>Durée de conservation limitée à 90 jours par Vercel.</li>
+              <li>Umami Analytics est auto-hébergé sur <code>stats.fph-solutions.com</code> — aucune donnée transmise à un tiers&nbsp;;</li>
+              <li>Durée de conservation Vercel Analytics&nbsp;: 90 jours.</li>
             </ul>
             <p>
-              Pour plus d&apos;informations sur le traitement de vos données par Vercel Analytics, consultez la page dédiée&nbsp;: <a href="https://vercel.com/docs/analytics/privacy" target="_blank" rel="noopener noreferrer" className="text-[#00d4ff] hover:underline">vercel.com/docs/analytics/privacy</a>.
+              Pour plus d&apos;informations sur Vercel Analytics, consultez&nbsp;: <a href="https://vercel.com/docs/analytics/privacy" target="_blank" rel="noopener noreferrer" className="text-[#00d4ff] hover:underline">vercel.com/docs/analytics/privacy</a>.
             </p>
           </section>
 

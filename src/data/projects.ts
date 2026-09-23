@@ -230,7 +230,7 @@ export const faqItems = [
   },
   {
     question: "Proposez-vous de la maintenance après livraison ?",
-    answer: "Oui, je propose des contrats de maintenance : mises à jour de sécurité, correctifs, évolutions mineures, et monitoring. Le déploiement sur Vercel inclut une maintenance de base gratuite (HTTPS, CDN, builds automatiques).",
+    answer: "Oui. Trois formules sont détaillées sur la page /maintenance : Sérénité à 49 €/mois (mises à jour de sécurité, sauvegardes quotidiennes, surveillance 24/7, 30 min de modifications par mois, réponse sous 48 h ouvrées), Croissance à 99 €/mois (1 h de modifications et de petites évolutions par mois, environnement de préproduction, réponse sous 24 h ouvrées) et Partenaire à 199 €/mois (3 h par mois, panne critique prise en charge sous 4 h ouvrées, canal direct et revue trimestrielle). Le déploiement sur Vercel inclut une maintenance de base gratuite (HTTPS, CDN, builds automatiques).",
   },
   {
     question: "Comment démarrer un projet avec vous ?",

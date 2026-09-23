@@ -1,8 +1,11 @@
 import Link from "next/link"
+import { SITE_URL } from "@/lib/site"
 
 export const metadata = {
   title: "Mentions Légales",
   description: "Mentions légales réglementaires du site internet FPH Solutions.",
+  alternates: { canonical: `${SITE_URL}/mentions-legales` },
+  openGraph: { url: `${SITE_URL}/mentions-legales` },
 }
 
 export default function MentionsLegalesPage() {
@@ -29,12 +32,15 @@ export default function MentionsLegalesPage() {
             </p>
             <p>
               <strong>FPH Solutions</strong> — Florian Philibert<br />
-              <strong>Adresse :</strong> Aulnay-sous-Bois, France<br />
-              <strong>Email :</strong> contact@fph-solutions.com<br />
-              <strong>Directeur de la publication :</strong> Florian Philibert
-              {/* À compléter au lancement pro : statut (ex. micro-entrepreneur), adresse complète, SIRET, n° de TVA intracommunautaire */}
+              <strong>Forme juridique&nbsp;:</strong> Micro-entreprise<br />
+              <strong>Commune&nbsp;:</strong> Entraigues-sur-la-Sorgue (84), France<br />
+              <strong>Email&nbsp;:</strong> contact@fph-solutions.com<br />
+              <strong>Directeur de la publication&nbsp;:</strong> Florian Philibert<br />
+              <strong>Immatriculation&nbsp;:</strong> Micro-entreprise en cours d&apos;immatriculation — SIRET communiqué dès attribution.<br />
+              <strong>TVA&nbsp;:</strong> TVA non applicable, article 293 B du CGI.
             </p>
           </section>
+
 
           <section className="space-y-3">
             <h2 className="text-xl font-semibold text-foreground">2. Hébergement</h2>

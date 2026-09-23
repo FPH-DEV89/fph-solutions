@@ -16,7 +16,7 @@
 1. Aller sur [vercel.com/new](https://vercel.com/new)
 2. Importer le repo GitHub `FPH-DEV89/fph-solutions`
 3. Framework : Next.js (détection auto)
-4. Domain : Ajouter `fphsolutions.fr` dans les custom domains
+4. Domain : `fph-solutions.com` (et `www.fph-solutions.com`) dans les custom domains
 5. Build command : `npm run build`
 6. Output directory : `.next`
 
@@ -28,9 +28,9 @@ Aucune pour l'instant (site statique).
 1. Dans Cloudflare Dashboard → Email → Email Routing
 2. Activer Email Routing
 3. Créer une règle :
-   - Email : `contact@fphsolutions.fr`
-   - Forward vers : ton adresse Gmail
-4. Configurer Gmail pour envoyer en tant que `contact@fphsolutions.fr` :
+   - Email : `contact@fph-solutions.com`
+   - Forward vers : ta boîte Gmail
+4. Configurer Gmail pour envoyer en tant que `contact@fph-solutions.com` :
    - Settings → Voir tous les paramètres → Comptes et importation
    - "Ajouter une autre adresse email"
    - SMTP : `smtp.gmail.com`, port 587, TLS

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { Analytics } from "@vercel/analytics/react"
+import Script from "next/script"
 
 export default function AnalyticsWithConsent() {
   const [accepted, setAccepted] = useState<boolean | null>(null)
@@ -20,5 +21,14 @@ export default function AnalyticsWithConsent() {
   }, [])
 
   if (accepted !== true) return null
-  return <Analytics />
+  return (
+    <>
+      <Analytics />
+      <Script
+        src="https://stats.fph-solutions.com/script.js"
+        data-website-id="e4e3583d-b26d-4827-be20-71e01ff03f12"
+        strategy="afterInteractive"
+      />
+    </>
+  )
 }

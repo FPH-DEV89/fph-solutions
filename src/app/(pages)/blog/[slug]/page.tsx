@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/site";
 import {
   getAllSlugs,
   getPostBySlug,
@@ -29,6 +30,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.title,
     description: post.description,
+    alternates: { canonical: `${SITE_URL}/blog/${slug}` },
+    openGraph: { url: `${SITE_URL}/blog/${slug}` },
   };
 }
 

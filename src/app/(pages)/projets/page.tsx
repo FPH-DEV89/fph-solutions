@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/site";
 import { projects } from "@/data/projects";
 import ProjectGrid from "@/components/ProjectGrid";
 
@@ -6,6 +7,8 @@ export const metadata: Metadata = {
   title: "Projets",
   description:
     "Découvrez mes projets : applications SAV, sites vitrine, outils de productivité et solutions d'automatisation.",
+  alternates: { canonical: `${SITE_URL}/projets` },
+  openGraph: { url: `${SITE_URL}/projets` },
 };
 
 export default function ProjectsPage() {

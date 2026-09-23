@@ -1,8 +1,11 @@
 import Link from "next/link"
+import { SITE_URL } from "@/lib/site"
 
 export const metadata = {
   title: "Conditions Générales d'Utilisation",
   description: "Conditions générales d'utilisation du site internet FPH Solutions.",
+  alternates: { canonical: `${SITE_URL}/cgu` },
+  openGraph: { url: `${SITE_URL}/cgu` },
 }
 
 export default function CguPage() {

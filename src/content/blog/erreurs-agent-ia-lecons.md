@@ -4,6 +4,7 @@ description: "Session de 19 h, facture multipliée par 4, consignes floues : les
 date: "2026-08-24"
 slug: "erreurs-agent-ia-lecons"
 tags: ["IA", "Automatisation", "Retour d'expérience"]
+image: "/blog/erreurs-agent-ia-lecons.webp"
 published: true
 ---
 

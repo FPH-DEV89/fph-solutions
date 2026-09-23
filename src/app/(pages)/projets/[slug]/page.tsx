@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/site";
 import { projects } from "@/data/projects";
 
 const categoryLabel: Record<string, string> = {
@@ -25,6 +26,8 @@ export async function generateMetadata({
   return {
     title: project.title,
     description: project.description,
+    alternates: { canonical: `${SITE_URL}/projets/${slug}` },
+    openGraph: { url: `${SITE_URL}/projets/${slug}` },
   };
 }
 

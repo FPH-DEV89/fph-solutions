@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { SITE_URL } from "@/lib/site"
 import { paliers, sla, inclus, exclus, process, faq, horsForfait, reprise, horaires } from "@/data/sav"
 import TicketForm from "@/components/TicketForm"
 import MaintenanceHero from "@/components/maintenance/MaintenanceHero"
@@ -11,10 +12,13 @@ import MaintenanceProcess from "@/components/maintenance/MaintenanceProcess"
 import MaintenanceFAQ from "@/components/maintenance/MaintenanceFAQ"
 
 export const metadata: Metadata = {
-  title: "Maintenance et SAV | FPH Solutions",
+  title: "Maintenance et SAV",
   description:
     "Mises à jour, sauvegardes, surveillance et corrections incluses. Trois formules de maintenance pour votre site, avec un délai de prise en charge garanti.",
+  alternates: { canonical: `${SITE_URL}/maintenance` },
+  openGraph: { url: `${SITE_URL}/maintenance` },
 }
+
 
 export default function MaintenancePage() {
   return (

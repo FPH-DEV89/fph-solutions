@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/site";
 import { getPosts, formatPostDate, readingTime } from "@/lib/posts";
 
 export function generateMetadata(): Metadata {
@@ -7,6 +8,8 @@ export function generateMetadata(): Metadata {
     title: "Blog",
     description:
       "Articles sur l'IA, l'automatisation et la technologie — FPH Solutions",
+    alternates: { canonical: `${SITE_URL}/blog` },
+    openGraph: { url: `${SITE_URL}/blog` },
   };
 }
 

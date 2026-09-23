@@ -4,6 +4,7 @@ description: "162 mails traités en une semaine, serveurs surveillés 24h/24, ra
 date: "2026-09-01"
 slug: "mon-ia-boite-mail-serveurs-rappels"
 tags: ["IA", "Automatisation", "Retour d'expérience"]
+image: "/blog/mon-ia-boite-mail-serveurs-rappels.webp"
 published: true
 ---
 
