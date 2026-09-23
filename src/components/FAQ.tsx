@@ -2,6 +2,27 @@
 
 import { faqItems } from "@/data/projects"
 import { motion } from "framer-motion"
+import Link from "next/link"
+
+// Routes internes citées en texte dans les réponses de la FAQ : on les rend
+// cliquables pour éviter une référence morte (ex. « page /maintenance »).
+const INTERNAL_ROUTES = ["/maintenance", "/projets", "/blog"]
+
+function renderAnswer(text: string) {
+  return text.split(/(\/maintenance|\/projets|\/blog)/g).map((part, i) =>
+    INTERNAL_ROUTES.includes(part) ? (
+      <Link
+        key={i}
+        href={part}
+        className="text-accent underline underline-offset-2 hover:no-underline"
+      >
+        {part}
+      </Link>
+    ) : (
+      part
+    )
+  )
+}
 
 export default function FAQSection() {
   return (
@@ -51,7 +72,7 @@ export default function FAQSection() {
               </summary>
               <div className="border-t border-zinc-200 dark:border-zinc-800 px-6 py-5">
                 <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-                  {item.answer}
+                  {renderAnswer(item.answer)}
                 </p>
               </div>
             </motion.details>
