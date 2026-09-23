@@ -35,6 +35,7 @@ export default function Footer() {
               <li><Link href="/projets" className="transition hover:text-[#00d4ff]">Projets</Link></li>
               <li><Link href="/#about" className="transition hover:text-[#00d4ff]">À propos</Link></li>
               <li><Link href="/#services" className="transition hover:text-[#00d4ff]">Services</Link></li>
+              <li><Link href="/maintenance" className="transition hover:text-[#00d4ff]">Maintenance</Link></li>
               <li><Link href="/#faq" className="transition hover:text-[#00d4ff]">FAQ</Link></li>
               <li><Link href="/#contact" className="transition hover:text-[#00d4ff]">Contact</Link></li>
             </ul>
