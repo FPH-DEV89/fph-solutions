@@ -48,7 +48,7 @@ export default function CookieBanner() {
     >
       <div className="flex flex-col sm:flex-row sm:items-center gap-4">
         <p className="flex-1 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-          Nous utilisons uniquement des cookies techniques (préférence de thème) et une mesure d&apos;audience anonyme sans cookie (Vercel Analytics).{" "}
+          Nous utilisons uniquement des cookies techniques (préférence de thème). La mesure d&apos;audience anonyme (Vercel Analytics et Umami Analytics, sans cookie ni identifiant publicitaire) n&apos;est activée qu&apos;après votre accord.{" "}
           <Link href="/politique-de-cookies" className="text-[#00d4ff] hover:underline">
             En savoir plus
           </Link>
