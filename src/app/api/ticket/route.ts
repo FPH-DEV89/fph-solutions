@@ -6,6 +6,7 @@ import {
 } from "@/lib/ticket-email";
 import { createTicketPage } from "@/lib/notion-tickets";
 import { sendTelegramTicketAlert } from "@/lib/telegram-notify";
+import { echeanceSla, formatEcheance } from "@/lib/sla";
 import { sla } from "@/data/sav";
 import type { PalierId, CriticitéId } from "@/data/sav";
 
@@ -129,6 +130,9 @@ export async function POST(request: Request) {
     const palierLabel = PALIER_LABELS[palier] ?? palier;
     const delaiPriseEnCharge = getDelaiPriseEnCharge(palier, criticite);
 
+    const { echeance, delaiLabel: delaiSlaLabel } = echeanceSla(new Date(), delaiPriseEnCharge);
+    const echeanceLabel = formatEcheance(echeance);
+
     // ── Email interne ──────────────────────────────────────────
     const apiKey = process.env.RESEND_API_KEY;
     const resend = apiKey ? new Resend(apiKey) : null;
@@ -153,6 +157,7 @@ export async function POST(request: Request) {
           criticiteLabel,
           sujet,
           description,
+          echeanceSla: echeanceLabel,
         });
 
         const { error: sendError } = await resend.emails.send({
@@ -211,6 +216,8 @@ export async function POST(request: Request) {
         criticite,
         sujet,
         description,
+        echeanceSla: echeance.toISOString(),
+        delaiSla: delaiSlaLabel,
       });
     } catch (err) {
       console.error("Notion ticket creation failed:", err);
@@ -229,6 +236,7 @@ export async function POST(request: Request) {
         criticiteLabel,
         sujet,
         description,
+        echeanceSla: echeanceLabel,
       });
     } catch (err) {
       console.error("Telegram ticket alert failed:", err);

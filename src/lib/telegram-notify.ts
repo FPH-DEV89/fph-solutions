@@ -101,6 +101,8 @@ export interface TelegramTicketData {
   criticiteLabel: string;
   sujet: string;
   description: string;
+  /** Libellé court de l'échéance SLA (usage interne uniquement) */
+  echeanceSla?: string;
 }
 
 export async function sendTelegramTicketAlert(
@@ -132,10 +134,14 @@ export async function sendTelegramTicketAlert(
     };
     const emoji = criticiteEmoji[ticket.criticite] ?? "⚪";
 
+    const slaLine = ticket.echeanceSla
+      ? `\n⏱ <b>SLA :</b> ${e(ticket.echeanceSla)}`
+      : "";
+
     const text = `${emoji} <b>Nouveau ticket SAV : ${e(ticket.reference)}</b>
 
 <b>Criticité :</b> ${e(ticket.criticite)} — ${e(ticket.criticiteLabel)}
-<b>Palier :</b> ${e(ticket.palier)}
+<b>Palier :</b> ${e(ticket.palier)}${slaLine}
 
 👤 <b>${e(ticket.nom)}</b>
 📧 ${e(ticket.email)}

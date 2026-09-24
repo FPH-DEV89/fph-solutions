@@ -35,6 +35,8 @@ export interface TicketNotificationData {
   criticiteLabel: string;
   sujet: string;
   description: string;
+  /** Libellé court de l'échéance SLA (usage interne uniquement) */
+  echeanceSla?: string;
 }
 
 export interface TicketAckData {
@@ -122,6 +124,10 @@ export function buildTicketNotificationEmail(
                       <td width="130" style="font-size:12px;color:#8899aa;text-transform:uppercase;letter-spacing:1px;padding:6px 0;">Criticité</td>
                       <td style="font-size:14px;font-weight:700;padding:6px 0;color:${color};">${e(data.criticite)} — ${e(data.criticiteLabel)}</td>
                     </tr>
+                    ${data.echeanceSla ? `<tr>
+                      <td width="130" style="font-size:12px;color:#8899aa;text-transform:uppercase;letter-spacing:1px;padding:6px 0;">Échéance SLA</td>
+                      <td style="font-size:14px;color:#1a2733;font-weight:600;padding:6px 0;">${e(data.echeanceSla)}</td>
+                    </tr>` : ""}
                   </table>
                   <div style="background:#f7fafc;border-left:4px solid ${color};border-radius:8px;padding:14px 16px;margin-top:16px;font-size:14px;line-height:1.7;color:#334155;white-space:pre-wrap;">${e(data.description)}</div>
                 </td></tr>
@@ -143,6 +149,7 @@ export function buildTicketNotificationEmail(
 </html>`;
 
   const orgText = data.organisation ? `\nStructure: ${data.organisation}` : "";
+  const slaText = data.echeanceSla ? `\nÉchéance SLA : ${data.echeanceSla}` : "";
   const text = `Nouveau ticket SAV : ${data.reference}
 Criticité : ${data.criticite} — ${data.criticiteLabel}
 
@@ -153,7 +160,7 @@ Palier: ${data.palier}
 Site: ${data.site}
 
 DEMANDE
-Sujet: ${data.sujet}
+Sujet: ${data.sujet}${slaText}
 
 ${data.description}
 
