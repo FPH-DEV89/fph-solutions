@@ -91,7 +91,7 @@ export const projects: Project[] = [
     title: "SOBE Plomberie",
     subtitle: "Site vitrine pro",
     description: "Site vitrine pour une entreprise de plomberie : services en cartes, demande de devis en ligne, zones d'intervention et SEO local.",
-    longDescription: "SOBE Plomberie est une entreprise artisanale qui avait besoin d'un site digne de son savoir-faire : clair, rassurant, et qui apporte de vraies demandes de devis. Pas un simple CV en ligne — un outil commercial.\n\nLe site présente les services (dépannage, installation, rénovation, climatisation) sous forme de cartes claires, la zone d'intervention avec les communes desservies, et un formulaire de devis en ligne qui arrive directement dans la boîte mail de l'entreprise, sans intermédiaire.\n\nOptimisé SEO local et mobile-first, il charge en un clin d'œil et se déploie en un clic. Un exemple typique de site vitrine qui travaille pour l'entreprise 24h/24, sans maintenance technique.",
+    longDescription: "SOBE Plomberie est une entreprise artisanale qui avait besoin d'un site digne de son savoir-faire : clair, rassurant, et qui apporte de vraies demandes de devis. Pas un simple CV en ligne — un outil commercial.\n\nLe site présente les services (dépannage, installation, rénovation, climatisation) sous forme de cartes claires, la zone d'intervention avec les communes desservies, et un formulaire de devis en ligne qui arrive directement dans la boîte mail de l'entreprise, sans intermédiaire.\n\nOptimisé SEO local et mobile-first, il charge en un clin d'œil et se déploie en un clic. Un exemple typique de site vitrine qui travaille pour l'entreprise 24 h/24, sans maintenance technique.",
     tags: ["JAMstack", "JavaScript", "Tailwind CSS", "SEO"],
     image: "/projects/sobe-plomberie.webp",
     imageFull: "/projects/sobe-plomberie-full.webp",
@@ -222,7 +222,7 @@ export const faqItems = [
   },
   {
     question: "Combien coûte un projet ?",
-    answer: "Chaque projet est unique. Le coût dépend de la complexité, du nombre de fonctionnalités, et du design souhaité. Je propose un devis gratuit après étude de votre besoin. Les projets commencent généralement à partir de 500€ pour un site vitrine simple.",
+    answer: "Chaque projet est unique. Le coût dépend de la complexité, du nombre de fonctionnalités, et du design souhaité. Je propose un devis gratuit après étude de votre besoin. Les projets commencent généralement à partir de 500 € pour un site vitrine simple.",
   },
   {
     question: "Quels sont les délais de réalisation ?",
@@ -234,6 +234,6 @@ export const faqItems = [
   },
   {
     question: "Comment démarrer un projet avec vous ?",
-    answer: "Contactez-moi via le formulaire du site ou par email. Je vous réponds sous 24h pour un premier échange gratuit. On discute de votre besoin, je vous fais une proposition technique et un devis — sans engagement.",
+    answer: "Contactez-moi via le formulaire du site ou par email. Je vous réponds sous 24 h pour un premier échange gratuit. On discute de votre besoin, je vous fais une proposition technique et un devis — sans engagement.",
   },
 ]

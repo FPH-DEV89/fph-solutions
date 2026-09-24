@@ -148,7 +148,7 @@ export function buildContactEmail(data: ContactEmailData): { html: string; text:
                   <td>
                     <div style="font-size:13px;color:#1a2733;font-weight:700;">FPH Solutions</div>
                     <div style="font-size:12px;color:#8899aa;margin-top:2px;">contact@fph-solutions.com · <a href="https://cal.com/fph-solutions.com/15min" style="color:#0088ff;text-decoration:none;">Réserver un appel</a></div>
-                    <div style="font-size:11px;color:#aab8c5;margin-top:10px;">Réponse garantie sous 24h ouvrées.</div>
+                    <div style="font-size:11px;color:#aab8c5;margin-top:10px;">Réponse garantie sous 24 h ouvrées.</div>
                   </td>
                 </tr>
               </table>
@@ -230,7 +230,7 @@ export function buildConfirmationEmail(data: ConfirmationEmailData): { html: str
           <tr>
             <td style="background:#ffffff;padding:8px 32px 32px;">
               <h1 style="font-size:22px;color:#1a2733;margin:24px 0 8px;font-weight:700;">Merci ${escapedFirstName} !</h1>
-              <p style="font-size:14px;color:#334155;line-height:1.7;margin:0 0 20px;">J'ai bien reçu votre demande et je vous réponds sous 24h ouvrées.</p>
+              <p style="font-size:14px;color:#334155;line-height:1.7;margin:0 0 20px;">J'ai bien reçu votre demande et je vous réponds sous 24 h ouvrées.</p>
               <div style="background:#f7fafc;border-left:4px solid #00d4ff;border-radius:8px;padding:14px 16px;margin:20px 0;">
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
                   <tr>
@@ -263,7 +263,7 @@ export function buildConfirmationEmail(data: ConfirmationEmailData): { html: str
                   <td>
                     <div style="font-size:13px;color:#1a2733;font-weight:700;">FPH Solutions</div>
                     <div style="font-size:12px;color:#8899aa;margin-top:2px;">contact@fph-solutions.com · <a href="https://cal.com/fph-solutions.com/15min" style="color:#0088ff;text-decoration:none;">Réserver un appel</a></div>
-                    <div style="font-size:11px;color:#aab8c5;margin-top:10px;">Réponse garantie sous 24h ouvrées.</div>
+                    <div style="font-size:11px;color:#aab8c5;margin-top:10px;">Réponse garantie sous 24 h ouvrées.</div>
                   </td>
                 </tr>
               </table>
@@ -278,7 +278,7 @@ export function buildConfirmationEmail(data: ConfirmationEmailData): { html: str
 
   const text = `Merci ${data.firstName} !
 
-J'ai bien reçu votre demande et je vous réponds sous 24h ouvrées.
+J'ai bien reçu votre demande et je vous réponds sous 24 h ouvrées.
 
 RÉCAPITULATIF DE VOTRE DEMANDE
 - Type de projet : ${data.projectTypeLabel}
@@ -292,7 +292,7 @@ Merci pour votre confiance, et à très vite !
 
 Cordialement,
 L'équipe FPH Solutions — contact@fph-solutions.com
-Réponse garantie sous 24h ouvrées.`;
+Réponse garantie sous 24 h ouvrées.`;
 
   return { html, text };
 }

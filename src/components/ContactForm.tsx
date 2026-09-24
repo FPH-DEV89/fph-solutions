@@ -58,7 +58,7 @@ export default function ContactForm() {
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-zinc-600 dark:text-zinc-400">
             Vous avez un projet en tête ? Envoyez-moi un message et je vous
-            réponds sous 24h.
+            réponds sous 24 h.
           </p>
         </motion.div>
 
