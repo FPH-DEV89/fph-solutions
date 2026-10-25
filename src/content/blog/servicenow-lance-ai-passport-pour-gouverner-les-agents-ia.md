@@ -4,6 +4,7 @@ description: "ServiceNow lance AI Passport : un identifiant cryptographique pour
 date: "2026-10-22"
 slug: "servicenow-lance-ai-passport-pour-gouverner-les-agents-ia"
 tags: ["Automatisation", "IA"]
+image: "/blog/servicenow-lance-ai-passport-pour-gouverner-les-agents-ia.webp"
 source: "https://www.lemondeinformatique.fr/actualites/lire-servicenow-lance-ai-passport-pour-gouverner-les-agents-ia-100857.html"
 published: true
 ---
