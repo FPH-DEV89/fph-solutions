@@ -57,3 +57,22 @@ Aucune pour l'instant (site statique).
 1. Ajouter les infos dans `src/data/projects.ts`
 2. (Optionnel) Ajouter une image dans `public/projects/`
 3. Commit + push → Vercel déploie automatiquement
+
+## 6. Hébergement réel de la preview (VPS Ionos)
+
+Ce n'est PAS Vercel : le site tourne sur le VPS, derrière nginx-proxy-manager.
+
+- URL : `https://preview.fph-solutions.com` → NPM (`172.18.0.1:3000`) → `fph-preview.service`
+- Unité : `/etc/systemd/system/fph-preview.service` (`next start -p 3000`), **enabled** (survit au reboot)
+- Sources : `/srv/docker/hermes/hermes_data/fph-solutions`
+- Rebuild : `cd /srv/docker/hermes/hermes_data/fph-solutions && NODE_OPTIONS=--max-old-space-size=1024 nice -n 10 ./node_modules/.bin/next build`
+
+### Règle absolue : jamais `next dev` dans ce dossier
+
+`next dev` réécrit `.next/` et supprime `BUILD_ID` → `next start` sort en `status 1` et
+l'unité part en boucle de redémarrages (394 redémarrages le 31/10, preview HS).
+Pour développer : copier le projet ailleurs, ou `npm run dev` sur un autre port et un autre dossier.
+
+Si le doute persiste : `ls .next/BUILD_ID`. Absent ⇒ rebuild avant tout restart.
+L'auto-réparateur (`/usr/local/bin/hermes-auto-repair.sh`, cron */5) fait désormais ce rebuild
+tout seul avant de redémarrer le service.

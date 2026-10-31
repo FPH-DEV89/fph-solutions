@@ -15,6 +15,8 @@ const cspHeader = `
 `.replace(/\s{2,}/g, ' ').trim();
 
 const nextConfig: NextConfig = {
+  // `next dev` écrit dans .next-dev : un dev lancé à la main ne peut plus écraser le build de production lu par `next start`.
+  distDir: process.env.NODE_ENV === "development" ? ".next-dev" : ".next",
   async headers() {
     return [
       {
