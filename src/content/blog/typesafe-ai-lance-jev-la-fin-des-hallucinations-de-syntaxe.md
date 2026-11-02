@@ -6,7 +6,7 @@ slug: "typesafe-ai-lance-jev-la-fin-des-hallucinations-de-syntaxe"
 tags: ["IA", "Automatisation"]
 image: "/blog/typesafe-ai-lance-jev-la-fin-des-hallucinations-de-syntaxe.webp"
 source: "https://next.ink/257219/ia-le-nouveau-modele-jev-se-veut-le-champion-des-decisions-typees/"
-published: true
+published: false
 ---
 
 Jeudi 15 octobre 2026, 7 h 12. Mon café fume sur mon bureau quand une alerte système fait vibrer ma montre : `Uncaught SyntaxError: Unexpected end of JSON input at line 1`.

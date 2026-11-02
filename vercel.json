@@ -1,5 +1,9 @@
 {
   "name": "fph-solutions",
   "framework": "nextjs",
-  "regions": ["cdg1"]
+  "regions": ["cdg1"],
+  "redirects": [
+    { "source": "/blog/typesafe-ai-lance-jev-des-sorties-json-sans-hallucination", "destination": "/blog/ia-le-nouveau-modele-jev-se-veut-le-champion-des-decisions-typees", "permanent": true },
+    { "source": "/blog/typesafe-ai-lance-jev-la-fin-des-hallucinations-de-syntaxe", "destination": "/blog/ia-le-nouveau-modele-jev-se-veut-le-champion-des-decisions-typees", "permanent": true }
+  ]
 }

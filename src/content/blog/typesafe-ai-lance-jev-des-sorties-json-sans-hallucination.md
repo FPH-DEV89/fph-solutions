@@ -6,7 +6,7 @@ slug: "typesafe-ai-lance-jev-des-sorties-json-sans-hallucination"
 tags: ["IA", "Automatisation"]
 image: "/blog/typesafe-ai-lance-jev-des-sorties-json-sans-hallucination.webp"
 source: "https://next.ink/257219/ia-le-nouveau-modele-jev-se-veut-le-champion-des-decisions-typees/"
-published: true
+published: false
 ---
 
 Jeudi 1er octobre 2026, 6 h 45. Mon café est encore brûlant quand une alerte Discord réveille brutalement mon téléphone : `SyntaxError: Unexpected token '}' in JSON at position 142`.
