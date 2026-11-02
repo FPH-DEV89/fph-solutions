@@ -3,13 +3,45 @@ import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/site";
 import { getPosts, formatPostDate, readingTime } from "@/lib/posts";
 
-export function generateMetadata(): Metadata {
+export async function generateMetadata(): Promise<Metadata> {
+  const posts = await getPosts();
+  const latestPost = posts[0];
+  const imageUrl = latestPost?.image
+    ? (latestPost.image.startsWith("http")
+        ? latestPost.image
+        : `${SITE_URL}${latestPost.image.startsWith("/") ? "" : "/"}${latestPost.image}`)
+    : `${SITE_URL}/og-default.png`;
+
+  const title = "Blog";
+  const description =
+    "Articles sur l'IA, l'automatisation et la technologie — FPH Solutions";
+
   return {
-    title: "Blog",
-    description:
-      "Articles sur l'IA, l'automatisation et la technologie — FPH Solutions",
+    title,
+    description,
     alternates: { canonical: `${SITE_URL}/blog` },
-    openGraph: { url: `${SITE_URL}/blog` },
+    openGraph: {
+      type: "website",
+      title,
+      description,
+      url: `${SITE_URL}/blog`,
+      siteName: "FPH Solutions",
+      locale: "fr_FR",
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: latestPost?.title ?? "FPH Solutions",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [imageUrl],
+    },
   };
 }
 

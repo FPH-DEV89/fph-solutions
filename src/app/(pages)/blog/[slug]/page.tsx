@@ -27,11 +27,39 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     notFound();
   }
 
+  const imageUrl = post.image
+    ? (post.image.startsWith("http")
+        ? post.image
+        : `${SITE_URL}${post.image.startsWith("/") ? "" : "/"}${post.image}`)
+    : `${SITE_URL}/og-default.png`;
+
   return {
     title: post.title,
     description: post.description,
     alternates: { canonical: `${SITE_URL}/blog/${slug}` },
-    openGraph: { url: `${SITE_URL}/blog/${slug}` },
+    openGraph: {
+      type: "article",
+      title: post.title,
+      description: post.description,
+      url: `${SITE_URL}/blog/${slug}`,
+      siteName: "FPH Solutions",
+      locale: "fr_FR",
+      publishedTime: post.date,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+      images: [imageUrl],
+    },
   };
 }
 
